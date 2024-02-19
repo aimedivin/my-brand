@@ -139,11 +139,70 @@ body {
     background-color: var(--btn-blue);
     transition: .7s;
 }
-
-.section-home .home-right img {
-    width: 20rem;
-    margin-top: 2rem;
+.home-right {
+    position: relative;
+}
+.home-right .my-photo img {
+    width: 22rem;
+    margin-top: 2.2rem;
     /* margin-left: -10rem; */
+}
+.home-right .social-media {
+    display: flex;
+    display: flex;
+    column-gap: 1.6rem;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+    bottom: -0.5rem;
+    right: 4.2rem;
+    background-color: #ffffff;
+    padding: .8rem 2.3rem;
+    height: 6rem;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+}
+.social-media img {
+    width: 1.6rem;
 }
 
 /* About Me section */
+
+.section-about__me {
+    background-color: white;
+    width: 60rem;
+    margin-inline: auto;
+    margin-top: -2.4rem;
+    border-radius: 0.8rem;
+    padding-block: 5rem;
+}
+
+.section-title {
+    text-transform: uppercase;
+    font-size: 2.1rem;
+    font-weight: 600;
+    text-align: center;
+}
+.about-me__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 3rem;
+}
+.about-me__info {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+.about-me__info div {
+    background-color: #1f1f1f;
+    height: 7.5rem;
+    color: white;
+}
+.about-me__description {
+    width: 50%;
+}
+.section-contact__me {
+    height: 50vh;
+}
