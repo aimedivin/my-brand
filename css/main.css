@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap');
+
+:root {
+    --bg-color: #CDCBCB;
+    --btn-blue: #024561;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Style */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--bg-color);
+    letter-spacing: -1.2px;
+}
+
+/* Header Styles */
+.header {
+    background-color: #bbbbbb;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 4.5rem;
+    padding-inline: 6rem;
+}
+
+.header-logo {
+    display: flex;
+    align-items: end;
+}
+
+.header-logo img {
+    width: 2.3rem;
+    height: 1.9rem;
+}
+
+.header-logo span {
+    margin-left: -2px;
+    font-weight: 750;
+    letter-spacing: -1px;
+}
+
+.header-dark_light-mode a {
+    text-decoration: none;
+    color: black;
+}
+.header-dark_light-mode i {
+    font-size: 1.25rem;
+}
+
+.header-navigation a {
+    text-decoration: none;
+    color: #313030;
+    font-weight: 500;
+    margin-left: 1rem;
+}
+
+.header-login_btn a {
+    color: white;
+    text-decoration: none;
+    background-color: var(--btn-blue);
+    padding: 0.45rem .95rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.header-login_btn img {
+    width: 1.5rem;
+    height: 1rem;
+}
