@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap');
 
 :root {
-    --bg-color: #CDCBCB;
-    --btn-blue: #024561;
+    --bg-color: hsl(198, 10%, 80%);
+    --btn-blue: #024764;
 }
 
 * {
@@ -25,7 +25,7 @@ body {
     justify-content: space-around;
     align-items: center;
     height: 4.5rem;
-    padding-inline: 6rem;
+    padding-inline: 7rem;
 }
 
 .header-logo {
@@ -57,6 +57,7 @@ body {
     color: #313030;
     font-weight: 500;
     margin-left: 1rem;
+    font-weight: 600;
 }
 
 .header-login_btn a {
@@ -76,3 +77,73 @@ body {
     width: 1.5rem;
     height: 1rem;
 }
+
+/*  section-home */
+
+.section-home {
+    display: flex;
+    align-items: center;
+    width: 48rem;
+    margin-block: 3rem 0;
+    margin-inline: auto;
+}
+.section-home .home-left {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+}
+.home-left h2 {
+    text-transform: uppercase;
+    font-size: 2.1rem;
+    line-height: 2.3rem;
+}
+.home-left .name-blue {
+    color: var(--btn-blue);
+}
+.home-left .first-name {
+    letter-spacing: 0.6px;
+}
+.home-left .sub-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: -1.5rem;
+}
+.home-left .description {
+    font-size: 1.15rem;
+    letter-spacing: -0.66px;
+    width: 90%;
+    text-align: justify;
+    margin-top: -2rem;
+}
+.home-left .cta-btn {
+    display: flex;
+    column-gap: 2rem;
+}
+.home-left .cta-btn a {
+    text-decoration: none;
+    padding: 0.4rem 1rem;
+    border: 2px solid var(--btn-blue);
+    font-weight: 600;
+    border-radius: 2px;
+}
+.cta-btn .btn-download__cv {
+    color: white;
+    background-color: var(--btn-blue);
+    text-transform: uppercase;
+}
+.cta-btn .btn-send__message {
+    color: var(--btn-blue);
+}
+.cta-btn .btn-send__message:hover {
+    color: white;
+    background-color: var(--btn-blue);
+    transition: .7s;
+}
+
+.section-home .home-right img {
+    width: 20rem;
+    margin-top: 2rem;
+    /* margin-left: -10rem; */
+}
+
+/* About Me section */
