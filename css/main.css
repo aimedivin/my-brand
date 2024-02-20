@@ -384,11 +384,110 @@ body {
 
 .blogs {
     text-align: center;
-
+    width: 50rem;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+    margin-top: 6rem;
 }
+.blogs__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    text-align: left;
+}
+.blogs__blog {
+    flex-basis: 35%;;
+    background-color: hsl(180, 1%, 85%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.5rem;
+}
+.blogs__thumbnail img{
+    width: 16.5rem;
+    height: 10.5rem;
+}
+.blog__tn_title {
+    font-weight: 700;
+    font-size: 1.08rem;
+    margin-left: 0.7rem;
+    margin-top: 0.4rem;
+}
+.blog__tn_description {
+    font-size: 0.9rem;
+    text-align: justify;
+    margin: 0.2rem 1rem 0.5rem 1.5rem;
+    line-height: -50px;
+}
+.blogs__line {
+    background-color: black;
+    width: 16rem;
+    height: 1px;
+    border: none;
+    margin-bottom: 0.2rem;
+}
+.blogs__cta_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1.5rem;
+}
+.blogs__like_img {
+    width: 1.6rem;
+}
+.blogs__comment_img {
+    width: 1.9rem;
+}
+.blogs__share_img {
+    width: 1.3rem;
+}
+
 
 /* .section-contact__me */
 
-.section-contact__me {
-    height: 50vh;
+.contact {
+    margin-top: 6rem;
+    background-color: #DBDBDB;
+    width: 60rem;
+    margin-inline: auto;
+    text-align: center;
+    padding-block: 4rem;
+}
+
+
+/* || FOOTER */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    padding-block: 5rem 1rem;
+}
+.footer__content {
+    display: flex;
+    justify-content: center;
+    gap: 7rem;
+}
+
+.footer__title {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+.footer ul {
+    list-style: none;
+    margin-left: 1rem;
+}
+.footer__links li {
+    line-height: -10px;
+}
+.footer__form * {
+    display: block;
 }
