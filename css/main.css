@@ -458,6 +458,35 @@ body {
     text-align: center;
     padding-block: 4rem;
 }
+.contact__content {
+    display: flex;
+    justify-content: center;
+    column-gap: 3.5rem;
+    margin-top: 4rem;
+}
+.contact__content img {
+    width: 2.5rem;
+}
+.contact__content p {
+    line-height: 1.1rem;
+    font-weight: 500;
+}
+.contact__content a {
+    color: rgb(44, 44, 44);
+    text-decoration: none;
+    font-style: italic;
+    font-size: 0.95rem;
+}
+.contact__email img {
+    padding-bottom: 1.45rem;
+}
+.contact__web img {
+    padding-bottom: 0.78rem;
+}
+.contact__Tel img {
+    width: 2.3rem;
+    padding-bottom: 0.9rem;
+}
 
 
 /* || FOOTER */
@@ -486,8 +515,26 @@ body {
     margin-left: 1rem;
 }
 .footer__links li {
-    line-height: -10px;
+    margin-block: -5px;
 }
 .footer__form * {
     display: block;
+    margin-block: 10px;
+    outline: none;
+    font-family: inherit;
+}
+.footer__form input,
+.footer__form textarea {
+    padding-left: 0.8rem;
+    border: 1px solid;
+    border-radius: 3px;
+}
+.footer__form input {
+    height: 1.9rem;
+    width: 16rem;
+}
+.footer__form textarea {
+    height: 8rem;
+    width: 16rem;
+    padding-top: 0.5rem;
 }
