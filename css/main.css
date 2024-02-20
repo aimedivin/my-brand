@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap');
 
 :root {
-    --bg-color: hsl(198, 10%, 80%);
+    --bg-color: #CDCBCB;
     --btn-blue: #024764;
 }
 
@@ -48,6 +48,7 @@ body {
     text-decoration: none;
     color: black;
 }
+
 .header-dark_light-mode i {
     font-size: 1.25rem;
 }
@@ -73,6 +74,7 @@ body {
     font-size: 1.1rem;
     cursor: pointer;
 }
+
 .header-login_btn img {
     width: 1.5rem;
     height: 1rem;
@@ -87,27 +89,33 @@ body {
     margin-block: 3rem 0;
     margin-inline: auto;
 }
+
 .section-home .home-left {
     display: flex;
     flex-direction: column;
     row-gap: 3rem;
 }
+
 .home-left h2 {
     text-transform: uppercase;
     font-size: 2.1rem;
     line-height: 2.3rem;
 }
+
 .home-left .name-blue {
     color: var(--btn-blue);
 }
+
 .home-left .first-name {
     letter-spacing: 0.6px;
 }
+
 .home-left .sub-title {
     font-size: 1.5rem;
     font-weight: 600;
     margin-top: -1.5rem;
 }
+
 .home-left .description {
     font-size: 1.15rem;
     letter-spacing: -0.66px;
@@ -115,10 +123,12 @@ body {
     text-align: justify;
     margin-top: -2rem;
 }
+
 .home-left .cta-btn {
     display: flex;
     column-gap: 2rem;
 }
+
 .home-left .cta-btn a {
     text-decoration: none;
     padding: 0.4rem 1rem;
@@ -126,27 +136,33 @@ body {
     font-weight: 600;
     border-radius: 2px;
 }
+
 .cta-btn .btn-download__cv {
     color: white;
     background-color: var(--btn-blue);
     text-transform: uppercase;
 }
+
 .cta-btn .btn-send__message {
     color: var(--btn-blue);
 }
+
 .cta-btn .btn-send__message:hover {
     color: white;
     background-color: var(--btn-blue);
     transition: .7s;
 }
+
 .home-right {
     position: relative;
 }
+
 .home-right .my-photo img {
     width: 22rem;
     margin-top: 2.2rem;
     /* margin-left: -10rem; */
 }
+
 .home-right .social-media {
     display: flex;
     display: flex;
@@ -156,12 +172,13 @@ body {
     position: absolute;
     bottom: -0.5rem;
     right: 4.2rem;
-    background-color: #ffffff;
+    background-color: #DBDBDB;
     padding: .8rem 2.3rem;
     height: 6rem;
     border-top-left-radius: 1.5rem;
     border-top-right-radius: 1.5rem;
 }
+
 .social-media img {
     width: 1.6rem;
 }
@@ -169,40 +186,150 @@ body {
 /* About Me section */
 
 .section-about__me {
-    background-color: white;
+    background-color: #DBDBDB;
     width: 60rem;
     margin-inline: auto;
     margin-top: -2.4rem;
     border-radius: 0.8rem;
-    padding-block: 5rem;
+    padding-block: 3rem;
 }
 
 .section-title {
     text-transform: uppercase;
-    font-size: 2.1rem;
-    font-weight: 600;
+    font-size: 2rem;
+    font-weight: 700;
     text-align: center;
 }
+
+.section-about__me .section-title {
+    margin-bottom: 4rem;
+}
+
 .about-me__content {
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: 3rem;
+    column-gap: 3.5rem;
 }
+
 .about-me__info {
-    width: 20%;
+    width: 15%;
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
 }
+
 .about-me__info div {
     background-color: #1f1f1f;
-    height: 7.5rem;
+    height: 7.2rem;
+    width: 11rem;
     color: white;
+    text-align: center;
+    vertical-align: bottom;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
+.about-me__info h2 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.about-me__info h3 {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.about-me__info h4 {
+    font-size: 0.85rem;
+    font-weight: 400;
+    font-style: italic;
+}
+
 .about-me__description {
-    width: 50%;
+    background-color: #AEB7BB;
+    padding: 2rem 3rem;
+    width: 55%;
 }
+
+.about-me__description p {
+    font-size: 1.15rem;
+    text-align: justify;
+}
+
+/* section-skills */
+.section-title {
+    margin-bottom: 1rem;
+}
+.section-skills {
+    margin-top: 5rem;
+    width: 45rem;
+    margin-inline: auto;
+    padding-block: 2rem 4rem;
+}
+
+.section-skills .section-description {
+    width: 35rem;
+    margin: 0 auto;
+    text-align: justify;
+    font-size: 1.1rem;
+}
+
+.skills-content {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    color: white;
+    margin-block: 4rem 2rem;
+}
+.skills-content .tech {
+    flex-basis: 27%;
+    padding: 1rem 0;
+    border-radius: 3px;
+    background-color: black;
+}
+.tech figure {
+    display: flex;
+    column-gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+.tech img {
+    width: 3.3rem;
+}
+.tech .stars {
+    margin-bottom: 0.2rem;
+}
+.tech .stars img {
+    width: 1.1rem;
+}
+.tech p, .tech h3 {
+    margin-left: 0.7rem;
+}
+.tech h3 {
+    font-weight: 500;
+}
+.tech p {
+    font-weight: 300;
+}
+
+/* section-portfolio */
+
+.section-portfolio {
+    margin-top: 4rem;
+    background-color: #DBDBDB;
+    width: 60rem;
+    margin-inline: auto;
+    border-radius: 0.8rem;
+    text-align: center;
+    padding-block: 3rem;
+}
+.
+/* .section-contact__me */
+
 .section-contact__me {
     height: 50vh;
 }
