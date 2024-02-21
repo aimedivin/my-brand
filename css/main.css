@@ -242,7 +242,6 @@ body {
     width: 11rem;
     color: white;
     text-align: center;
-    vertical-align: bottom;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -272,6 +271,7 @@ body {
 
 .about__description p {
     font-size: 1.15rem;
+    font-weight: 500;
     text-align: justify;
 }
 
@@ -283,7 +283,6 @@ body {
 }
 .skills {
     margin-top: 5rem;
-    width: 45rem;
     margin-inline: auto;
     padding-block: 2rem 4rem;
 }
@@ -296,7 +295,8 @@ body {
 }
 
 .skills__content {
-    margin-top: 1.5rem;
+    width: 60%;
+    margin-inline: auto;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -312,7 +312,7 @@ body {
     display: flex;
     column-gap: 0.5rem;
     justify-content: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 .skills__tech img {
     width: 3.3rem;
@@ -323,7 +323,8 @@ body {
 .skills__stars img {
     width: 1.1rem;
 }
-.skills__tech p, .skills__tech h3 {
+.skills__tech p, 
+.skills__tech h3 {
     margin-left: 0.7rem;
 }
 .skills__tech h3 {
@@ -369,7 +370,7 @@ body {
     margin-left: 1rem;
 }
 .portfolio__project_name {
-    font-weight: 600;
+    font-weight: 570;
     margin-bottom: -5px;
 }
 .portfolio__project_demo {
@@ -378,6 +379,7 @@ body {
 }
 .portfolio__btn a,
 .blogs__btn a {
+    text-align: center;
     text-decoration: none;
     color: white;
     background-color: var(--btn-blue);
@@ -576,12 +578,12 @@ body {
 
 /* || For Mobile */
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 480px) {
 
     .header {
         height: 3.5rem;
         justify-content: space-between;
-        padding-inline: 1.5rem;
+        padding-inline: 10%;
     }
     .header__logo img {
         width: 1.7rem;
@@ -629,17 +631,13 @@ body {
         height: 1rem;
     }
 
-    main {
-    }
     /*  */
     .portfolio__title,
     .about__title,
     .skills__title,
     .blogs__title,
     .contact__title {
-        font-size: 1.5rem;
-        font-weight: 700;
-        text-align: center;
+        font-size: 1.3rem;
     }
 
 
@@ -658,7 +656,7 @@ body {
         font-size: 1.2rem;
     }
     .home__title h2 {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         line-height: 1rem;
     }
     .home__title .first-name {
@@ -712,10 +710,187 @@ body {
         width: 22rem;
         margin-top: 5rem;
         border-radius: 0.2rem;
+        padding-block: 1rem;
+    }
+    .about__title {
+        margin-bottom: 1.5rem;
+    }
+    .about__content {
+        flex-direction: column-reverse;
+        row-gap: 2rem;
+    }
+    .about__info {
+        width: 80%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    .about__info div {
+        height: 5.5rem;
+        width: 7.5rem;
+        margin-inline: auto;
+    }
+    .about__info h2 {
+        font-size: 0.85rem;
+    }
+    .about__info h3 {
+        font-size: 0.72rem;
+    }
+    .about__info h4 {
+        font-size: 0.7rem;
+    }
+    .about__info img {
+        width: 1.5rem;
+    }
+    .about__description {
+        width: 90%;
+        padding: 1rem 1.5rem;
+    }
+    .about__description p {
+        font-size: 0.93rem;
     }
 
+    /* Skills */
+    .skills {
+        margin-top: 1rem;
+    }
+    .skills__description {
+        width: 19.5rem;
+        font-size: 0.85rem;
+    }
+    .skills__content {
+        width: 80%;
+        margin-block: 1.5rem .5rem;
+    }
+    .skills__tech {
+        flex-basis: 40%;
+    }
+    .skills__tech img {
+        width: 2.5rem;
+    }
+    .skills__stars {
+        margin-bottom: -0.1rem;
+    }
+    .skills__stars img {
+        width: 1.1rem;
+        margin-left: -0.1rem;
+    }
+    .skills__tech p,
+    .skills__tech h3 {
+        margin-left: 0.3rem;
+    }
+    .skills__tech h3 {
+        font-size: 0.9rem;
+        margin-bottom: -0.2rem;
+    }
 
-    .footer, .skills, .portfolio,  .blogs, .contact {
-        display: none;
+    .skills__tech p {
+        font-weight: 300;
+        font-size: 0.9rem;
+    }
+    .portfolio {
+        margin-top: .5rem;
+        width: 22rem;
+        padding-block: 1.5rem;
+        gap: 2rem
+    }
+    .portfolio__content {
+        gap: 1rem .5rem ;
+        flex-wrap: wrap;
+    }
+    .portfolio__project {
+        background-color: red;
+    }
+    .portfolio__thumbnail img {
+        width: 10rem;
+    }
+    .portfolio__tn_description {
+        padding-block: 0.3rem;
+        box-shadow: 0 2.5px 2px -1.5px black;
+    }
+    .portfolio__project_name,
+    .portfolio__project_demo {
+        margin-left: .51rem;
+    }
+
+    .portfolio__project_name {
+        font-size: .9rem;
+        margin-bottom: -2px;
+    }
+
+    .portfolio__project_demo {
+        font-size: 0.75rem;
+    }
+    .portfolio__btn a,
+    .blogs__btn a {
+        
+        padding: .3rem .9rem;
+        font-size: .85rem;
+        border-radius: 2px;
+    }
+    /* Contact */
+    .contact {
+        width: 90%;
+    }
+    /* Blogs */
+    .blogs {
+        width: 90%;
+    }
+    .footer {
+        width: 90%;
+        gap: 2rem;
+        padding-left: 1rem;
+    }
+    .footer__content {
+        gap: 3rem;
+        margin-inline: auto;
+    }
+    .footer__links,
+    .footer__get_started,
+    .footer__connect {
+        margin-bottom: .51rem;
+        margin-left: 2rem;
+    }
+    .footer__title {
+        font-size: 1rem;
+    }
+    .footer__link li {
+        font-size: 0.85rem;
+    }
+    .footer__connect_icon {
+        column-gap: .71rem;
+    }
+
+    .footer__connect_icon img {
+        width: 1.3rem;
+    }
+    .footer__form * {
+        font-size: .85rem;
+        margin-block: 5px;
+    }
+    .footer__form input,
+    .footer__form textarea {
+        padding-left: 0.4rem;
+        border: .6px solid;
+        border-radius: 1.5px;
+        width: 11rem;
+    }
+    .footer__form input {
+        height: 1.4rem;
+    }
+
+    .footer__form textarea {
+        height: 6rem;
+        padding-top: 0.2rem;
+    }
+
+    .footer__btn {
+        padding: 0.2rem .8rem;
+        font-size: .8rem;
+        border-radius: 2px;
+        border: none;
+    }
+    .footer__copyright {
+        font-size: .8rem;
     }
 }
