@@ -165,13 +165,14 @@ main {
     border-collapse: collapse;
     width: 100%;
     margin-top: .5rem;
+    text-align: center;
 }
 .content__data_table th {
     border-bottom: 1px solid ;
-    padding-right: 1rem;
 }
 .content__data_table td {
-    padding: .5rem 0 .5rem .7rem;
+    width: 10%;
+    padding: .5rem 0;
     font-size: .9rem;
 }
 .content__data_table tr:nth-child(even) {
