@@ -26,46 +26,22 @@
 		</div>
 		<nav class="header__navigation">
 			<div class="header__nav_link">
-				<a href="">Home</a>
-			<a href="">Skills</a>
-			<a href="">About Me</a>
-			<a href="">Portfolio</a>
-			<a href="">Blogs</a>
-			<a href="">Contact Me</a>
+				<a href="#">Home</a>
+				<a href="#about">About Me</a>
+				<a href="#skills">Skills</a>
+				<a href="#portfolio">Portfolio</a>
+				<a href="#blogs">Blogs</a>
+				<a href="#contact">Contact Me</a>
 			</div>
 			<div class="header__login_btn">
-				<span>Login</span>
-				<img src="assets/icons/🦆 icon _account login_.svg" alt="" srcset="">
+				<a href="/login-signup/login.html">
+					<span>Login</span>
+					<img src="assets/icons/🦆 icon _account login_.svg" alt="" srcset="">
+				</a>
+				
 			</div>
 		</nav>
 	</header>
-	<section class="login">
-		<article class="login__message">
-			<p>Hello,</p>
-			<p>Welcome Back!</p>
-			<p>Please enter your credentials to continues accessing your account</p>
-			<p>We're excited to have you here again.</p>
-		</article>
-		<article class="login__form">
-			<h1 class="login__title">SignIn</h1>
-			<form action="" class="login__form_fields">
-				<label for="">
-					<input type="text" placeholder="Email / Username">
-				</label>
-				<label for="">
-					<input type="password" placeholder="Password">
-				</label>
-				<button class="login__btn login__btn--signin">SignIn</button>
-			</form>
-			<p>Forgot password ? <a href="">Click here</a></p>
-			<p>Create an account, <a href="">SignUp</a></p>
-			<form action="" class="login__form_with">
-				<h1 class="login__title2">Or</h1>
-				<button class="login__btn login__btn--google">Signin with Google</button>
-				<button class="login__btn login__btn--apple">SignIn With Apple</button>
-			</form>
-		</article>
-	</section>
 	<main>
 		<section class="home">
 			<article class="home__intro">
@@ -86,7 +62,7 @@
 				</div>
 				<div class="home__cta_btn">
 					<a href="" class="home__btn_download">Download CV</a>
-					<a href="" class="home__btn_send_message">Send Message</a>
+					<a href="#footer" class="home__btn_send_message">Send Message</a>
 				</div>
 			</article>
 			<article class="home__picture">
@@ -111,9 +87,9 @@
 					</figure>
 				</div>
 			</article>
-		</section>
+		</section >
 
-		<section class="about">
+		<section class="about" id="about">
 			<p class="about__title">about me</p>
 			<div class="about__content">
 				<div class="about__info">
@@ -146,7 +122,7 @@
 			</div>
 		</section>
 
-		<section class="skills">
+		<section class="skills" id="skills">
 			<p class="skills__title">Skills</p>
 			<p class="skills__description">
 				Skilled software engineer with a strong foundation in various programming languages and frameworks.
@@ -240,7 +216,7 @@
 				</figure>
 			</article>
 		</section>
-		<section class="portfolio">
+		<section class="portfolio" id="portfolio">
 			<div>
 				<p class="portfolio__title">Portfolio</p>
 				<p class="portfolio__description">All Projects</p>
@@ -285,7 +261,7 @@
 				<a href="">Load More</a>
 			</div>
 		</section>
-		<section class="blogs">
+		<section class="blogs" id="blogs">
 			<div>
 				<p class="blogs__title">My blogs</p>
 				<p class="blogs__description">Behind The Work</p>
@@ -400,7 +376,7 @@
 			</div>
 		</section>
 
-		<section class="contact">
+		<section class="contact" id="contact">
 			<div>
 				<p class="contact__title">Contact Me</p>
 				<p class="contact__description">Contact Information</p>
@@ -447,10 +423,10 @@
 			</div>
 		</section>
 	</main>
-	<footer class="footer">
+	<footer class="footer" id="footer">
 		<section class="footer__content">
 			<article>
-				<div class="footer__links">
+				<!-- <div class="footer__links">
 					<p class="footer__title">Quick Links</p>
 					<ul class="footer__link">
 						<li>Home</li>
@@ -460,7 +436,7 @@
 						<li>Blogs</li>
 						<li>Contact Me</li>
 					</ul>
-				</div>
+				</div> -->
 				<div class="footer__get_started">
 					<p class="footer__title">Get started</p>
 					<ul class="footer__link">
@@ -495,7 +471,8 @@
 			<p>Aime Divin IRAGENA 2023</p>
 		</section>
 	</footer>
-	<script src="js/login-signup.js"></script>
+	<!-- <script src="js/login-signup.js"></script>
+	<script src="js/main.js"></script> -->
 </body>
 
 </html>

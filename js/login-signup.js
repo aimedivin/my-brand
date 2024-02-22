@@ -6,9 +6,15 @@ console.log(main);
 
 login_btn.addEventListener("click", () => {
     login_page.style.display = "flex";
-    main[0].style.filter = "blur(10px)";
+    main[0].style.backgroundColor = "#000000ca";
+    Array.from(main[0].children).forEach(element => {
+        element.style.filter = "brightness(10%)";
+    }); 
 });
 main[0].addEventListener("click", () => {
     login_page.style.display = "none";
-    main[0].style.filter = "blur(0)"
+    main[0].style.backgroundColor = "transparent";
+    Array.from(main[0].children).forEach(element => {
+        element.style.filter = "blur(0)";
+    });
 });
