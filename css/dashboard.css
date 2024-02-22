@@ -7,6 +7,7 @@
     --btn-secondary-color: #912525;
     --btn-hover-active-color: #FFD703;
     --box-color: #e6e6e6;
+    --gray-700: rgb(53, 53, 53);
 }
 /* RESET */
 * {
@@ -105,7 +106,14 @@ main {
     align-items: center;
 }
 .content__header p {
-    font-size: .85rem;
+    font-size: .9rem;
+    font-weight: 550;
+    line-height: 15px;
+}
+.content__header p span {
+    font-size: .7rem;
+    font-style: italic;
+    color: var(--gray-700);
 }
 .content__header_action svg {
     width: 1.8rem;
@@ -214,4 +222,25 @@ main {
     font-size: .85rem;
     line-height: .8rem;
     width: 90%;
+}
+
+
+/* Next page division */
+
+.content__next {
+    background-color: rgb(54, 52, 52);
+    text-align: center;
+    border-radius: .6rem;
+    width: 30%;
+    margin-inline: auto 0;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding-block: 2px;
+    margin-block: 1.5rem;
+
+}
+
+.content__next span {
+    vertical-align: middle;
 }
