@@ -3,6 +3,9 @@
 :root {
     --bg-color: #CDCBCB;
     --btn-blue: #024764;
+
+    /* section bg color */
+    --stn-bg-color: #DBDBDB;
 }
 
 * {
@@ -11,14 +14,18 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Body Style */
 
 body {
     font-family: 'Open Sans', sans-serif;
     background-color: var(--bg-color);
     letter-spacing: -1.2px;
-    position: relative;
 }
+
 
 /* || ELEMENTS */
 .portfolio__title, 
@@ -31,9 +38,15 @@ body {
     font-weight: 700;
     text-align: center;
 }
+main {
+    position: relative;
+}
 
 /* Header Styles */
 .header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     background-color: #bbbbbb;
     display: flex;
     justify-content: space-around;
@@ -107,7 +120,7 @@ body {
     display: flex;
     align-items: center;
     width: 48rem;
-    margin-block: 3rem 0;
+    margin-block: 0rem 0;
     margin-inline: auto;
 }
 
@@ -211,7 +224,7 @@ body {
 /* About Me section */
 
 .about {
-    background-color: #DBDBDB;
+    background-color: var(--stn-bg-color);
     width: 60rem;
     margin-inline: auto;
     margin-top: -2.4rem;
@@ -312,7 +325,6 @@ body {
     display: flex;
     column-gap: 0.5rem;
     justify-content: center;
-    flex-wrap: wrap;
 }
 .skills__tech img {
     width: 3.3rem;
@@ -338,7 +350,7 @@ body {
 
 .portfolio {
     margin-top: 4rem;
-    background-color: #DBDBDB;
+    background-color: var(--stn-bg-color);
     width: 60rem;
     margin-inline: auto;
     border-radius: 0.8rem;
@@ -460,7 +472,7 @@ body {
 
 .contact {
     margin-top: 6rem;
-    background-color: #DBDBDB;
+    background-color: var(--stn-bg-color);
     width: 60rem;
     margin-inline: auto;
     text-align: center;
@@ -469,8 +481,13 @@ body {
 .contact__content {
     display: flex;
     justify-content: center;
-    column-gap: 3.5rem;
+    gap: 3.5rem;
     margin-top: 4rem;
+    flex-wrap: wrap;
+    margin-inline: auto;
+}
+.contact__content div {
+    width: 8rem;
 }
 .contact__content img {
     width: 2.5rem;
@@ -602,17 +619,31 @@ body {
         display: block;
         font-size: 1.4rem;
     }
+    .fa-xmark {
+        font-size: 1.6rem;
+        font-weight: 510;
+    }
     .header__navigation {
-        width: 20rem;
         display: none;
+        width: 20rem;
         position: absolute;
-        top: 5rem;
+        top: 3.4rem;
+        right: 0;
         row-gap: 2rem;
         align-items: center;
         flex-direction: column;
-        background-color: rgb(185, 203, 226);
+        background-color: #bbb;
         border-radius: 3px;
         padding: 2rem;
+        animation: slide_in_out 1s ease-in-out;
+    }
+    @keyframes slide_in_out {
+        from {
+            right: -20rem;
+        }
+        to {
+            right: 0;
+        }
     }
     .header__navigation a {
         display: flex;
@@ -647,7 +678,7 @@ body {
         position: relative;
         flex-direction: column;
         width: 20rem;
-        /* background-color: rgb(202, 224, 224); */
+        padding-top: 2.5rem;
     }
     .home__intro {
         row-gap: 0.5rem;
@@ -761,15 +792,16 @@ body {
     .skills__content {
         width: 80%;
         margin-block: 1.5rem .5rem;
+        gap: .5rem;
     }
     .skills__tech {
-        flex-basis: 40%;
+        flex-basis: 45%;
     }
     .skills__tech img {
         width: 2.5rem;
     }
     .skills__stars {
-        margin-bottom: -0.1rem;
+        margin-bottom: -0.2rem;
     }
     .skills__stars img {
         width: 1.1rem;
@@ -823,15 +855,35 @@ body {
     }
     .portfolio__btn a,
     .blogs__btn a {
-        
         padding: .3rem .9rem;
         font-size: .85rem;
         border-radius: 2px;
     }
     /* Contact */
     .contact {
-        width: 90%;
+        width: 80%;
+        border-radius: 5px;
+        padding-block: 2rem;
     }
+    .contact__description{
+        font-size: .8rem;
+    }
+    .contact__content {
+        gap: 1rem 2rem;
+        margin-top: 2rem;
+    }
+    .contact__content img {
+        width: 1.8rem;
+    }
+    .contact__content p {
+        font-size: 0.85rem;
+    }
+    .contact__content a {
+        font-size: .8rem;
+    }
+        .contact__email img {
+            padding-bottom: .95rem;
+        }
     /* Blogs */
     .blogs {
         width: 90%;
@@ -840,6 +892,7 @@ body {
         width: 90%;
         gap: 2rem;
         padding-left: 1rem;
+        padding-block: 3rem 1rem;
     }
     .footer__content {
         gap: 3rem;
