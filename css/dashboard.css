@@ -13,6 +13,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font: inherit;
 }
 
 body {
@@ -50,6 +51,7 @@ main {
     width: 1.5rem;
 }
 .sidebar__link--active,
+.sidebar__link--active-s,
 .sidebar__link:hover {
     color: var(--btn-hover-active-color);
     fill: var(--btn-hover-active-color);
@@ -58,6 +60,7 @@ main {
 .sidebar__link:hover:not(.sidebar__link--content, .sidebar__link--blog) svg path{
     fill: var(--btn-hover-active-color);
 }
+.sidebar__link--active-s svg path,
 .sidebar__link--content:hover svg path,
 .sidebar__link--blog:hover svg path {
     stroke: var(--btn-hover-active-color);
