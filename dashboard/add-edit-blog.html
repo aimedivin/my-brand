@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Message</title>
     <link rel="stylesheet" href="/css/dashboard.css">
-    <link rel="stylesheet" href="/css/message.css">
+    <link rel="stylesheet" href="/css/add-edit-blog.css">
 </head>
 
 <body>
@@ -28,13 +28,13 @@
                             d="M15 20H1C0.4 20 0 20.4 0 21V35C0 35.6 0.4 36 1 36H15C15.6 36 16 35.6 16 35V21C16 20.4 15.6 20 15 20ZM14 34H2V22H14V34ZM15 0H1C0.4 0 0 0.4 0 1V15C0 15.6 0.4 16 1 16H15C15.6 16 16 15.6 16 15V1C16 0.4 15.6 0 15 0ZM14 14H2V2H14V14ZM35 0H21C20.4 0 20 0.4 20 1V15C20 15.6 20.4 16 21 16H35C35.6 16 36 15.6 36 15V1C36 0.4 35.6 0 35 0ZM34 14H22V2H34V14ZM35 27H29V21C29 20.4 28.6 20 28 20C27.4 20 27 20.4 27 21V27H21C20.4 27 20 27.4 20 28C20 28.6 20.4 29 21 29H27V35C27 35.6 27.4 36 28 36C28.6 36 29 35.6 29 35V29H35C35.6 29 36 28.6 36 28C36 27.4 35.6 27 35 27Z"
                             fill="white" />
                     </svg>Dashboard</a>
-                <a href="#" class="sidebar__link sidebar__link--active">
+                <a href="/dashboard/message.html" class="sidebar__link">
                     <svg width="36" height="44" viewBox="0 0 36 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M4.15385 6.76904C1.86092 6.76904 0 9.0435 0 11.846V32.1537C0 34.9561 1.86092 37.2306 4.15385 37.2306H31.8462C34.1391 37.2306 36 34.9561 36 32.1537V11.846C36 9.0435 34.1391 6.76904 31.8462 6.76904H4.15385ZM4.15385 10.1537H31.8462C32.6091 10.1537 33.2308 10.9135 33.2308 11.846V12.6921L18 22.741L2.76923 12.6921V11.846C2.76923 10.9135 3.39092 10.1537 4.15385 10.1537ZM2.76923 13.1677L11.8122 21.7883L2.94231 32.8949L13.7603 23.4806L18 26.8127L22.2411 23.4806L33.0577 32.8949L24.1878 21.7883L33.2308 13.1677V32.1537C33.2231 32.4142 33.1637 32.6686 33.0577 32.8949C32.8292 33.4449 32.3848 33.846 31.8462 33.846H4.15385C3.61523 33.846 3.17077 33.4466 2.94231 32.8949C2.8365 32.6691 2.77711 32.4137 2.76923 32.1537V13.1677Z"
                             fill="white" />
                     </svg>Message</a>
-                <a href="/dashboard/blog.html" class="sidebar__link sidebar__link--blog">
+                <a href="#" class="sidebar__link sidebar__link--blog sidebar__link--active-s">
                     <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M2.91699 27.708C2.91699 26.5477 3.37793 25.4349 4.1984 24.6144C5.01887 23.7939 6.13167 23.333 7.29199 23.333C8.45231 23.333 9.56511 23.7939 10.3856 24.6144C11.2061 25.4349 11.667 26.5477 11.667 27.708C11.667 28.8683 11.2061 29.9811 10.3856 30.8016C9.56511 31.6221 8.45231 32.083 7.29199 32.083C6.13167 32.083 5.01887 31.6221 4.1984 30.8016C3.37793 29.9811 2.91699 28.8683 2.91699 27.708ZM2.91699 27.708V16.0413M7.29199 1.45801C21.766 1.45801 33.542 13.234 33.542 27.708M26.2503 27.708C26.2503 17.2547 17.7453 8.74967 7.29199 8.74967M18.9587 27.708C18.9587 21.2753 13.7247 16.0413 7.29199 16.0413"
@@ -104,144 +104,25 @@
                         </svg>
                     </span>
                 </div>
-
             </div>
             <div class="content__title">
-                <a href="">Messages</a>
+                <a href="">ADD / EDIT Blogs</a>
             </div>
-            <div class="content__main">
-                <div class="content__message">
-                    <div class="content__data">
-                        <div class="content__data_action">
-                            <svg width="33" height="33" viewBox="0 0 33 33" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M28.1133 26.22L23.58 21.7C25.0427 19.8366 25.8363 17.5355 25.8333 15.1667C25.8333 13.057 25.2078 10.9947 24.0357 9.24059C22.8636 7.48646 21.1977 6.11929 19.2486 5.31196C17.2996 4.50462 15.1548 4.29339 13.0857 4.70496C11.0166 5.11654 9.11596 6.13244 7.6242 7.6242C6.13244 9.11596 5.11654 11.0166 4.70496 13.0857C4.29339 15.1548 4.50462 17.2996 5.31196 19.2486C6.11929 21.1977 7.48646 22.8636 9.24059 24.0357C10.9947 25.2078 13.057 25.8333 15.1667 25.8333C17.5355 25.8363 19.8366 25.0427 21.7 23.58L26.22 28.1133C26.344 28.2383 26.4914 28.3375 26.6539 28.4052C26.8164 28.4729 26.9907 28.5077 27.1667 28.5077C27.3427 28.5077 27.517 28.4729 27.6794 28.4052C27.8419 28.3375 27.9894 28.2383 28.1133 28.1133C28.2383 27.9894 28.3375 27.8419 28.4052 27.6794C28.4729 27.517 28.5077 27.3427 28.5077 27.1667C28.5077 26.9907 28.4729 26.8164 28.4052 26.6539C28.3375 26.4914 28.2383 26.344 28.1133 26.22ZM7.16667 15.1667C7.16667 13.5844 7.63586 12.0377 8.51491 10.7221C9.39397 9.40652 10.6434 8.38114 12.1052 7.77564C13.567 7.17013 15.1755 7.01171 16.7274 7.32039C18.2792 7.62907 19.7047 8.391 20.8235 9.50982C21.9423 10.6286 22.7043 12.0541 23.013 13.606C23.3216 15.1578 23.1632 16.7663 22.5577 18.2281C21.9522 19.6899 20.9268 20.9394 19.6112 21.8184C18.2956 22.6975 16.7489 23.1667 15.1667 23.1667C13.0449 23.1667 11.0101 22.3238 9.50982 20.8235C8.00953 19.3232 7.16667 17.2884 7.16667 15.1667Z"
-                                    fill="black" />
-                            </svg>
-                            <svg width="36" height="35" viewBox="0 0 36 35" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_77_1377)">
-                                    <path
-                                        d="M15.0833 26.25H20.9167V23.3333H15.0833V26.25ZM4.875 8.75V11.6667H31.125V8.75H4.875ZM9.25 18.9583H26.75V16.0417H9.25V18.9583Z"
-                                        fill="black" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_77_1377">
-                                        <rect width="35" height="35" fill="white" transform="translate(0.5)" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                        </div>
-                        <table class="content__data_table">
-                            <tr>
-                                <th>Email</th>
-                                <th>Subject</th>
-                                <th>Action</th>
-                            </tr>
-                            <tr>
-                                <td>example@gmail.com</td>
-                                <td>Invitation to Even...</td>
-                                <td>
-                                    <form action="" class="content__data_form">
-                                        <button class="content__data_btn">Reply</button>
-                                        <button class="content__data_dbtn">
-                                            <svg width="30" height="34" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M5.86491 33.6667C4.90657 33.6667 4.10658 33.3458 3.46491 32.7042C2.82185 32.0611 2.50033 31.2604 2.50033 30.3021V4.5H0.416992V2.41667H8.75033V0.8125H21.2503V2.41667H29.5837V4.5H27.5003V30.3021C27.5003 31.2604 27.1795 32.0604 26.5378 32.7021C25.8948 33.3451 25.0941 33.6667 24.1357 33.6667H5.86491ZM10.4337 27.4167H12.517V8.66667H10.4337V27.4167ZM17.4837 27.4167H19.567V8.66667H17.4837V27.4167Z"
-                                                    fill="#800202" fill-opacity="0.86" />
-                                            </svg>
-                                        </button>
-                                    </form>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>example@gmail.com</td>
-                                <td>Invitation to Even...</td>
-                                <td>
-                                    <form action="" class="content__data_form">
-                                        <button class="content__data_btn">Reply</button>
-                                        <button class="content__data_dbtn">
-                                            <svg width="30" height="34" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M5.86491 33.6667C4.90657 33.6667 4.10658 33.3458 3.46491 32.7042C2.82185 32.0611 2.50033 31.2604 2.50033 30.3021V4.5H0.416992V2.41667H8.75033V0.8125H21.2503V2.41667H29.5837V4.5H27.5003V30.3021C27.5003 31.2604 27.1795 32.0604 26.5378 32.7021C25.8948 33.3451 25.0941 33.6667 24.1357 33.6667H5.86491ZM10.4337 27.4167H12.517V8.66667H10.4337V27.4167ZM17.4837 27.4167H19.567V8.66667H17.4837V27.4167Z"
-                                                    fill="#800202" fill-opacity="0.86" />
-                                            </svg>
-                                        </button>
-                                    </form>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>example@gmail.com</td>
-                                <td>Invitation to Even...</td>
-                                <td>
-                                    <form action="" class="content__data_form">
-                                        <button class="content__data_btn">Reply</button>
-                                        <button class="content__data_dbtn">
-                                            <svg width="30" height="34" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M5.86491 33.6667C4.90657 33.6667 4.10658 33.3458 3.46491 32.7042C2.82185 32.0611 2.50033 31.2604 2.50033 30.3021V4.5H0.416992V2.41667H8.75033V0.8125H21.2503V2.41667H29.5837V4.5H27.5003V30.3021C27.5003 31.2604 27.1795 32.0604 26.5378 32.7021C25.8948 33.3451 25.0941 33.6667 24.1357 33.6667H5.86491ZM10.4337 27.4167H12.517V8.66667H10.4337V27.4167ZM17.4837 27.4167H19.567V8.66667H17.4837V27.4167Z"
-                                                    fill="#800202" fill-opacity="0.86" />
-                                            </svg>
-                                        </button>
-                                    </form>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>example@gmail.com</td>
-                                <td>Invitation to Even...</td>
-                                <td>
-                                    <form action="" class="content__data_form">
-                                        <button class="content__data_btn">Reply</button>
-                                        <button class="content__data_dbtn">
-                                            <svg width="30" height="34" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M5.86491 33.6667C4.90657 33.6667 4.10658 33.3458 3.46491 32.7042C2.82185 32.0611 2.50033 31.2604 2.50033 30.3021V4.5H0.416992V2.41667H8.75033V0.8125H21.2503V2.41667H29.5837V4.5H27.5003V30.3021C27.5003 31.2604 27.1795 32.0604 26.5378 32.7021C25.8948 33.3451 25.0941 33.6667 24.1357 33.6667H5.86491ZM10.4337 27.4167H12.517V8.66667H10.4337V27.4167ZM17.4837 27.4167H19.567V8.66667H17.4837V27.4167Z"
-                                                    fill="#800202" fill-opacity="0.86" />
-                                            </svg>
-                                        </button>
-                                    </form>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>example@gmail.com</td>
-                                <td>Invitation to Even...</td>
-                                <td>
-                                    <form action="" class="content__data_form">
-                                        <button class="content__data_btn">Reply</button>
-                                        <button class="content__data_dbtn">
-                                            <svg width="30" height="34" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M5.86491 33.6667C4.90657 33.6667 4.10658 33.3458 3.46491 32.7042C2.82185 32.0611 2.50033 31.2604 2.50033 30.3021V4.5H0.416992V2.41667H8.75033V0.8125H21.2503V2.41667H29.5837V4.5H27.5003V30.3021C27.5003 31.2604 27.1795 32.0604 26.5378 32.7021C25.8948 33.3451 25.0941 33.6667 24.1357 33.6667H5.86491ZM10.4337 27.4167H12.517V8.66667H10.4337V27.4167ZM17.4837 27.4167H19.567V8.66667H17.4837V27.4167Z"
-                                                    fill="#800202" fill-opacity="0.86" />
-                                            </svg>
-                                        </button>
-                                    </form>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>example@gmail.com</td>
-                                <td>Invitation to Even...</td>
-                                <td>
-                                    <form action="" class="content__data_form">
-                                        <button class="content__data_btn">Reply</button>
-                                        <button class="content__data_dbtn">
-                                            <svg width="30" height="34" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M5.86491 33.6667C4.90657 33.6667 4.10658 33.3458 3.46491 32.7042C2.82185 32.0611 2.50033 31.2604 2.50033 30.3021V4.5H0.416992V2.41667H8.75033V0.8125H21.2503V2.41667H29.5837V4.5H27.5003V30.3021C27.5003 31.2604 27.1795 32.0604 26.5378 32.7021C25.8948 33.3451 25.0941 33.6667 24.1357 33.6667H5.86491ZM10.4337 27.4167H12.517V8.66667H10.4337V27.4167ZM17.4837 27.4167H19.567V8.66667H17.4837V27.4167Z"
-                                                    fill="#800202" fill-opacity="0.86" />
-                                            </svg>
-                                        </button>
-                                    </form>
-                                </td>
-                            </tr>
-                        </table>
-                        <div class="content__next">
-                            <p>1 of 5 Page <span><<&nbsp;<>&nbsp;>></span></p>
-                        </div>
-                    </div>
-                </div>
+            <div class="content__add_edit">
+                <form action="" class="content__add_edit_form">
+                    <label for="title">
+                        <input type="text" id="title" placeholder="Title">
+                    </label>
+                    <label for="title">
+                        <span>Blog Photo:</span>
+                        <input type="file" id="title">
+                    </label>
+                    <textarea name="" id="" cols="30" rows="10">Description
+                    </textarea>
+                    <button>Update / Edit</button>
+                </form>
             </div>
+
         </section>
     </main>
 </body>
