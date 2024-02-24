@@ -51,7 +51,7 @@
                 <h1 class="login__title">SignIn</h1>
                 <form action="" class="login__form_fields">
                     <label for="email">
-                        <input type="text" placeholder="Email / Username" id="email">
+                        <input type="text" placeholder="Email / Username" id="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Invalid email address">
                     </label>
                     <label for="password">
                         <input type="password" placeholder="Password" id="password" required>

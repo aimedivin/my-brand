@@ -14,7 +14,6 @@ hamburger_menu_btn.addEventListener('click', () => {
         menu_status = false
     }
 });
-
 Array.from(menu.children).forEach(element => {
     console.log(element.children);
     element.addEventListener('click', () => {
@@ -22,5 +21,4 @@ Array.from(menu.children).forEach(element => {
         menu.classList.remove('header__navigation-mobile');
         menu_status = false
     });
-})
-
+});
