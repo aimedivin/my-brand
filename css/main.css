@@ -156,7 +156,7 @@ main {
     display: flex;
     align-items: center;
     width: 48rem;
-    margin-top: 6.5rem;
+    margin-top: 4.5rem;
     margin-inline: auto;
     color: var(--font-black);
 }
@@ -901,7 +901,7 @@ main {
     .about {
         position: relative;
         width: 90%;
-        margin-top: -1.3rem;
+        margin-top: -2.3rem;
     }
 
     .about__title {
@@ -1359,7 +1359,7 @@ main {
     .about {
         position: relative;
         width: 90%;
-        margin-top: 12rem;
+        margin-top: 10.8rem;
         border-radius: 0.2rem;
         padding-block: 1.5rem 1rem;
     }
