@@ -27,26 +27,9 @@
     font-size: 1rem;
 }
 
-/* Next page division */
 
-.content__next {
-    background-color: rgb(54, 52, 52);
-    text-align: center;
-    border-radius: 0.6rem;
-    width: 30%;
-    margin-inline: auto 0;
-    color: white;
-    font-size: 0.85rem;
-    font-weight: 700;
-    padding-block: 2px;
-    margin-block: 1.5rem;
-}
 
-.content__next span {
-    vertical-align: middle;
-}
-
-@media only screen and (max-width: 572px) {
+@media only screen and (max-width: 576px) {
     .content__main {
         width: 100%;
     }
