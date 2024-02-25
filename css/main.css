@@ -102,8 +102,9 @@ main {
     letter-spacing: -1px;
 }
 
-.header-dark_light-mode i {
-    font-size: 1.25rem;
+.header__dark_light i {
+    font-size: 1.2rem;
+    cursor: pointer;
 }
 
 .header__menu_btn {
