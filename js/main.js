@@ -50,5 +50,5 @@ Array.from(menu.children).forEach((element) => {
         hamburger_menu_btn.innerHTML = '<i class="fa-solid fa-bars"></i>';
         menu.classList.remove("header__navigation-mobile");
         menu_status = false;
-    }
+    });
 });
