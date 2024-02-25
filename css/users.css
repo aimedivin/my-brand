@@ -3,3 +3,16 @@
     height: 3rem;
     border-radius: 50%;
 }
+
+@media only screen and (max-width: 576px) {
+
+    .user-photo img {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .content__next {
+        width: 45%;
+        font-size: .6rem;
+    }
+}

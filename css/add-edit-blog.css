@@ -1,5 +1,5 @@
 .content__add_edit_form {
-    width: 50%;
+    width: 60%;
     margin-inline: auto;
 }
 
@@ -48,4 +48,23 @@
     border: none;
     border-radius: 2px;
     font-weight: 600;
+}
+
+@media only screen and (max-width: 992px) {
+    .content__add_edit_form {
+            width: 80%;
+            margin-inline: auto;
+        }
+}
+@media only screen and (max-width: 768px) {
+    .content__add_edit_form {
+            width: 85%;
+            margin-inline: auto;
+        }
+}
+@media only screen and (max-width: 576px) {
+    .content__add_edit_form {
+            width: 90%;
+            margin-inline: auto;
+        }
 }
