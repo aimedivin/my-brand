@@ -1,0 +1,51 @@
+.content__add_edit_form {
+    width: 50%;
+    margin-inline: auto;
+}
+
+.content__add_edit_form label,
+.content__add_edit_form textarea {
+    width: 90%;
+    padding: .5rem;
+    border: 1px solid;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.559);
+}
+
+.content__add_edit_form label,
+.content__add_edit_form textarea,
+.content__add_edit_form button {
+    display: block;
+    margin-top: 1rem;
+    margin-inline: auto 3rem;
+}
+
+.content__add_edit_form label {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content__add_edit_form input {
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.content__add_edit_form ::placeholder {
+    color: black;
+}
+
+.content__add_edit_form textarea {
+    height: 12rem;
+    text-align: left;
+    outline: none;
+}
+
+.content__add_edit_form button {
+    padding: .4rem .5rem;
+    background-color: rgb(7, 81, 106);
+    color: white;
+    border: none;
+    border-radius: 2px;
+    font-weight: 600;
+}

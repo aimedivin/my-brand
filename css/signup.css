@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap');
+
+/* || RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font: inherit;
+}
+
+/* || VARIABLES */
+:root {
+    --btn-primary-color: #024764;
+    --btn-secondary-color: #990000;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60rem;
+    margin-inline: auto;
+    margin-top: 2rem;
+    z-index: 100;
+    animation-name: fade-in;
+    animation-duration: .5s;
+    background-color: #B0B8BA;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0.1;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+.login__title {
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.login__title2 {
+    font-weight: 600;
+}
+
+.login__message {
+    flex-basis: 45%;
+    background-color: #B0B8BA;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-inline: 2rem 3rem;
+    row-gap: 0.6rem;
+}
+
+.login__message p:nth-child(1) {
+    font-size: 1.7rem;
+
+}
+
+.login__message p:nth-child(2) {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+/* .login__message p:nth-child(3) {
+} */
+.login__message p:nth-child(4) {
+    margin-top: 2rem;
+    font-weight: 600;
+}
+
+.login__form {
+    flex-basis: 55%;
+    background-color: #D4DCE0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-block: 1rem;
+}
+
+.fullname,
+.email,
+.password {
+    display: block;
+    margin-block: 1rem;
+    width: 100%;
+}
+label {
+    display: block;
+    width: 20rem;
+    font: inherit;
+}
+.dob, .photo {
+    text-align: left;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    height: 1.5rem;
+    margin-block: 1rem;
+    padding-left: .5rem;
+    font-weight: 450;
+    color: #363636;
+}
+.login__form_fields input {
+    height: 1.5rem;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid black;
+    background-color: transparent;
+    padding-left: 0.5rem;
+}
+.dob input, .photo input {
+    width: 68%;
+    padding-left: 0;
+}
+.login__form_fields ::placeholder {
+    color: #1a1a1a;
+}
+
+.login__form p {
+    width: 20rem;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.login__form_with {
+    margin-top: 1rem;
+}
+
+/* BUTTONS */
+.login__btn {
+    display: block;
+    width: 20rem;
+    height: 2.2rem;
+    margin-block: 1rem;
+    font-weight: 600;
+    color: white;
+    border: none;
+    border-radius: 2px;
+}
+
+.login__btn--signin {
+    margin-top: 2rem;
+    background-color: #024764;
+}
+
+.login__btn--google {
+    background-color: #990000;
+}
+
+.login__btn--apple {
+    background-color: black;
+}
+
+/* Mobile style */
+
+@media only screen and (max-width: 480px) {
+    .login {
+        width: 90%;
+    }
+
+    .login__message {
+        display: none;
+    }
+
+    .login__title {
+        margin-block: 1rem;
+        font-size: 1.3rem;
+    }
+
+    .login__form {
+        flex-basis: 100%;
+        height: 100%;
+        padding-block: 2rem;
+    }
+
+        .fullname,
+        .email,
+        .password {
+        margin-top: .5rem;
+    }
+    .login__form_fields input {
+        width: 16rem;
+    }
+    label {
+        width: 90%;
+    }
+    .dob, .photo {
+        width: 16rem;
+        margin-block: 1rem; 
+    }
+    .dob input,
+    .photo input {
+        width: 60%;
+        padding-left: 0;
+        font-size: .75rem;
+    }
+    .login__form p {
+        width: 16rem;
+    }
+
+    .login__btn {
+        width: 16rem;
+        height: 1.8rem;
+    }
+}

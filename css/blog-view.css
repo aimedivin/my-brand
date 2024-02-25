@@ -1,0 +1,165 @@
+.blog__view {
+    background-color: rgb(172, 172, 172);
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 1rem 2rem 2rem 2rem;
+    margin-inline: auto;
+    margin-block: 2rem 1rem;
+    width: 50%;
+    border-radius: 3px;
+}
+
+.blog__view_close {
+    text-align: right;
+}
+
+.blog__view_close i {
+    font-size: 2rem;
+}
+
+.blog__view_title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-top: 1rem;
+}
+
+.blog__view_thumbnail {
+    margin: 1rem 2rem;
+}
+
+.blog__view_thumbnail img {
+    width: 20rem;
+}
+
+.blog__view_author {
+    border-left: 1px solid;
+    padding-left: .5rem;
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.blog__view_description {
+    margin-left: 2rem;
+}
+
+.blog__view_container hr {
+    border: 1px solid;
+    background-color: #000000;
+    margin-block: 1rem .4rem;
+    margin-left: 2rem;
+}
+
+.blog__view_cta_btn {
+    display: flex;
+    column-gap: 1.5rem;
+    margin-left: 2rem;
+    align-items: start;
+}
+
+.blog__view_cta_btn img {
+    width: 2rem;
+}
+
+.blog__view_comments {
+    margin-left: 2rem;
+}
+
+.blog__view_comment_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: 2rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.blog__view_comment_title svg {
+    width: 1.7rem;
+    height: 1.7rem;
+}
+
+.blog__comments {
+    display: flex;
+    flex-direction: column;
+    row-gap: .3rem;
+}
+
+.blog__comment {
+    display: flex;
+    column-gap: .6rem;
+    background-color: rgb(223, 223, 223);
+    padding: 1rem;
+    width: 90%;
+    margin-left: 2rem;
+    border-radius: 4px;
+}
+
+.blog__comment_username {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.blog__comment_description {
+    line-height: 17px;
+    font-size: .9rem;
+    font-weight: 500;
+    text-align: justify;
+    margin: 0 1rem .5rem 1rem;
+}
+
+.blog__comment_btn {
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
+}
+
+.blog__comment_btn svg {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.blog__comment_btn div {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.blog__comment_next {
+    background-color: #a6cdde;
+    width: 5rem;
+    text-align: center;
+    border-radius: 2px;
+    font-weight: 600;
+    align-self: end;
+    margin-right: 1.5rem;
+    margin-block: .5rem 1rem;
+    padding: .4rem .5rem;
+}
+
+.blog__comment_new {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-left: 2rem;
+    border: 1px solid black;
+    padding: .5rem;
+    align-items: end;
+}
+
+.blog__comment_new textarea {
+    height: 4rem;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.blog__comment_new button {
+    padding: .5rem 1rem;
+    background-color: var(--btn-blue);
+    border: none;
+    border-radius: 2px;
+    color: white;
+    width: 20%;
+}
