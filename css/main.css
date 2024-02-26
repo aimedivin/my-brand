@@ -8,21 +8,26 @@
 
     --box-black-color: #0b0b0b;
     --box-aa-color: #AEB7BB;
-    --box-bb-color: gray;   
-    --font-white: #fff;
+    --box-bb-color: gray;
+    --font-white: #bebebe;
     --font-black: #000;
-    --blog-bg-color: #b4babd;--portfolio-bg-color: #afafaf;
+    --blog-bg-color: #b4babd;
+    --portfolio-bg-color: #afafaf;
     --blog-title-color: #033341;
+    --form-gray-800: #1a1a1a;
 }
+
 .dark-mode {
     --bg-color: #141414;
-    --hdr-bg-color : #1a1a1a;
+    --hdr-bg-color: #1a1a1a;
     --stn-bg-color: #353535;
     --font-black: #efefef;
+    --font-white: #111111;
     --box-aa-color: #141616;
     --blog-bg-color: #202020;
     --portfolio-bg-color: #000000;
     --blog-title-color: #4ab3d3;
+    --form-gray-800: #b8b8b8;
 }
 
 * {
@@ -56,6 +61,7 @@ body {
     text-align: center;
     color: var(--font-black);
 }
+
 .skills__description,
 .portfolio__description,
 .blogs__description,
@@ -75,7 +81,7 @@ main {
     width: 100%;
     top: 0;
     z-index: 100;
-    background-color: var(--bg-color);
+    background-color: var(--font-white);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -92,6 +98,7 @@ main {
     width: 2.3rem;
     height: 1.9rem;
 }
+
 .header__logo svg path {
     fill: var(--font-black);
 }
@@ -102,9 +109,10 @@ main {
     letter-spacing: -1px;
 }
 
-.header__dark_light i {
-    font-size: 1.2rem;
+.header__dark_light {
+    font-size: 1.25rem;
     cursor: pointer;
+    margin-right: 1rem;
 }
 
 .header__menu_btn {
@@ -121,7 +129,7 @@ main {
     column-gap: 3.5rem;
 }
 
-.header__navigation a {
+.header__nav_link a {
     text-decoration: none;
     color: var(--font-black);
     font-weight: 500;
@@ -163,6 +171,9 @@ main {
     margin-top: 4.5rem;
     margin-inline: auto;
     color: var(--font-black);
+    background-image: url('/assets/images/ellipse.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .home__intro {
@@ -274,10 +285,12 @@ main {
     border-radius: 0.8rem;
     padding-block: 3rem;
 }
+
 #about {
     padding-top: 6rem;
     visibility: hidden;
 }
+
 .about__title {
     margin-bottom: 4rem;
 }
@@ -407,6 +420,7 @@ main {
     padding-top: 3rem;
     visibility: hidden;
 }
+
 .portfolio {
     margin-top: 1rem;
     background-color: var(--stn-bg-color);
@@ -524,17 +538,20 @@ main {
     margin: 0.2rem 1rem 0.5rem 2rem;
     font-weight: 400;
 }
+
 .blogs__action {
     width: 91%;
     border-top: 1.5px solid;
     padding-block: .4rem;
 }
+
 .blogs__cta_btn {
     display: flex;
     justify-content: center;
     align-items: center;
     column-gap: 1.8rem;
 }
+
 .blogs__cta_btn svg path {
     fill: var(--font-black);
 }
@@ -559,6 +576,7 @@ main {
     background-color: var(--stn-bg-color);
     width: 60rem;
     margin-inline: auto;
+    border-radius: .5rem;
     text-align: center;
     padding-block: 4rem;
     color: var(--font-black);
@@ -669,6 +687,7 @@ main {
     border: 1px solid rgb(97, 97, 97);
     border-radius: 3px;
     background-color: var(--stn-bg-color);
+    font-size: 1rem;
 }
 
 .footer__form input {
@@ -688,52 +707,125 @@ main {
 
 .footer__btn {
     text-decoration: none;
+    font-size: 1rem;
     color: white;
     background-color: var(--btn-blue);
-    padding: 0.4rem 1rem;
+    padding: 0 1rem;
     font-weight: 600;
     border-radius: 2px;
     border: none;
+    display: flex;
+    align-items: center;
+    column-gap: .1rem;
+    cursor: pointer;
 }
 
+.footer__btn svg {
+    width: .9rem;
+    height: .9rem;
+}
 
 /* || MEDIA QUERIES */
 
 @media only screen and (max-width: 992px) {
-    .home {
-        width: 90%;
+    .header__navigation {
+        display: flex;
+        align-items: center;
+        column-gap: 1rem;
     }
+
+    .header__nav_link a {
+        margin-left: .5rem;
+        font-size: .95rem;
+    }
+
+    .header__login_btn {
+        padding: .3rem .5rem;
+    }
+
+    .home {
+        width: 75%;
+    }
+
+    .home__greeting {
+        font-size: 1.4rem;
+        margin-bottom: .8rem;
+    }
+
+    .home__title h2 {
+        font-size: 1.8rem;
+        line-height: 1.8rem;
+    }
+
+    .home__sub_title {
+        font-size: 1.3rem;
+    }
+
+    .home__description {
+        font-size: 1.05rem;
+        width: 110%;
+    }
+
+    .home__cta_btn {
+        column-gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .home__cta_btn a {
+        text-decoration: none;
+        padding: 0.3rem .6rem;
+        font-size: .93rem;
+    }
+
+    .home__my_photo img {
+        width: 20rem;
+        /* margin-left: -10rem; */
+    }
+
+    .home__social_media {
+        right: 3.7rem;
+    }
+
     .about {
         width: 90%;
     }
+
     .about__content {
         width: 90%;
         margin-inline: auto;
         justify-content: space-around;
         column-gap: 1;
     }
+
     .skills {
         width: 90%;
     }
+
     .skills__content {
         width: 90%;
     }
+
     .portfolio__content {
         width: 90%;
         margin-inline: auto;
         flex-wrap: wrap;
         gap: 2rem;
     }
+
     .portfolio {
         width: 90%;
     }
+
     .blogs {
         width: 90%;
     }
+
     .contact {
         width: 90%;
     }
 }
+
+
 /* Medium screen */
 
 @media only screen and (max-width: 768px) {
@@ -756,8 +848,10 @@ main {
     }
 
     .header__dark_light {
-        display: none;
-    }
+        position: absolute;
+        top: 1.5rem;
+        left: 2rem;
+        }
 
     .header__menu_btn {
         display: block;
@@ -787,9 +881,9 @@ main {
         row-gap: 2rem;
         align-items: center;
         flex-direction: column;
-        background-color: #bbb;
+        background-color: var(--font-white);
         border-radius: 3px;
-        padding: 2rem;
+        padding: 4rem 2rem 2rem 2rem;
         animation: slide_in_out 1s ease-in-out;
     }
 
@@ -804,8 +898,6 @@ main {
     }
 
     .header__navigation-mobile .header__nav_link a {
-        color: black;
-        text-decoration: none;
         display: flex;
         flex-direction: column;
         font-size: 1.2rem;
@@ -840,6 +932,9 @@ main {
         padding-inline: 3rem;
         width: 100%;
         padding-top: 2.5rem;
+        background-size: 70%;
+        background-position-y: 5rem;
+        background-position-x: 5rem;
     }
 
     .home__description {
@@ -1049,25 +1144,31 @@ main {
     .blogs {
         width: 90%;
     }
+
     .blogs__description {
         font-size: .85rem;
     }
+
     .blog__tn_title {
         font-size: 1.1rem;
     }
+
     .blog__tn_description {
         font-size: 1rem;
         line-height: 1.2rem;
     }
+
     .blogs__thumbnail img {
         width: 18rem;
         height: 11rem;
     }
+
     .blogs__action {
         width: 91%;
         border-top: 1px solid;
         padding-block: .2rem;
     }
+
     .blogs__like_img {
         width: 1.7rem;
     }
@@ -1119,7 +1220,7 @@ main {
     }
 
     .footer__content {
-        gap: 6rem;
+        gap: 4rem;
         margin-inline: auto;
     }
 
@@ -1131,459 +1232,8 @@ main {
     }
 
     .footer__title {
-        font-size: 1.2rem;
-    }
-
-    .footer__link li {
-        font-size: 0.95rem;
-    }
-
-    .footer__connect_icon {
-        column-gap: .71rem;
-    }
-
-    .footer__connect_icon img {
-        width: 1.5rem;
-    }
-
-    .footer__form * {
-        font-size: 1rem;
-        margin-block: 9px;
-    }
-
-    .footer__form input,
-    .footer__form textarea {
-        padding-left: 0.4rem;
-        border: .6px solid;
-        border-radius: 1.5px;
-        width: 15rem;
-    }
-
-    .footer__form input {
-        height: 1.7rem;
-    }
-
-    .footer__form textarea {
-        height: 6.5rem;
-        padding-top: 0.2rem;
-    }
-
-    .footer__btn {
-        padding: 0.2rem .8rem;
-        font-size: 1rem;
-        border-radius: 2px;
-        border: none;
-    }
-
-    .footer__copyright {
-        font-size: .8rem;
-    }
-
-}
-
-
-
-/* || For Mobile */
-
-@media only screen and (max-width: 480px) {}
-
-@media only screen and (max-width: 768px) {
-    .header {
-        height: 3.5rem;
-        justify-content: space-between;
-        padding-inline: 5%;
-    }
-
-    .header__logo img {
-        width: 2rem;
-        height: 1.8rem;
-    }
-
-    .header__logo span {
-        margin-left: -1px;
-        font-weight: 750;
-        letter-spacing: -1px;
-        font-size: 1rem;
-    }
-
-    .header__dark_light {
-        display: none;
-    }
-
-    .header__menu_btn {
-        display: block;
-        font-size: 1.8rem;
-    }
-
-    .fa-xmark {
-        font-size: 1.9rem;
-        font-weight: 510;
-    }
-
-    .header__navigation,
-    .header__navigation * {
-        display: none;
-    }
-
-    .header__navigation-mobile * {
-        display: inline;
-    }
-
-    .header__navigation-mobile {
-        display: flex;
-        width: 20rem;
-        position: absolute;
-        top: 3.4rem;
-        right: 0;
-        row-gap: 2rem;
-        align-items: center;
-        flex-direction: column;
-        background-color: #bbb;
-        border-radius: 3px;
-        padding: 2rem;
-        animation: slide_in_out 1s ease-in-out;
-    }
-
-    @keyframes slide_in_out {
-        from {
-            right: -20rem;
-        }
-
-        to {
-            right: 0;
-        }
-    }
-
-    .header__navigation-mobile .header__nav_link a {
-        color: black;
-        text-decoration: none;
-        display: flex;
-        flex-direction: column;
-        font-size: 1.2rem;
-        margin-top: 0.8rem;
-    }
-
-    .header__navigation-mobile .header__login_btn {
-        width: 13rem;
-        justify-content: center;
-        font-size: 1.3rem;
-    }
-
-    .header__navigation-mobile .header__login_btn img {
-        width: 1.3rem;
-        height: 1rem;
-        vertical-align: middle;
-    }
-
-
-
-    /* Section Title */
-    .portfolio__title,
-    .about__title,
-    .skills__title,
-    .blogs__title,
-    .contact__title {
-        font-size: 1.7rem;
-    }
-
-    /* Home */
-    .home {
-        padding-inline: 3rem;
-        width: 100%;
-        padding-top: 2.5rem;
-    }
-
-    .home__description {
-        width: 100%;
-    }
-
-    .home__intro {
-        row-gap: 0.7rem;
-    }
-
-    .home__greeting {
-        font-size: 1.3rem;
-    }
-
-    .home__title h2 {
-        font-size: 1.7rem;
-        line-height: 1.6rem;
-    }
-
-    .home__sub_title {
-        font-size: 1.15rem;
-    }
-
-    .home__description {
-        font-size: 0.95rem;
-        font-weight: 500;
-        line-height: 1.2rem;
-    }
-
-    .home__cta_btn {
-        margin-top: 1rem;
-        column-gap: 1rem;
-        width: 15rem;
-    }
-
-    .home__cta_btn a {
-        font-size: 0.9rem;
-        text-align: center;
-        padding: 0.3rem 0.4rem;
-        border-width: 1.3px;
-        border-radius: 1px;
-        margin-bottom: 0.5rem;
-    }
-
-    .home__my_photo img {
-        width: 17rem;
-    }
-
-    .home__social_media {
-        height: 4rem;
-        column-gap: 1rem;
-        padding: 0.7rem 1.5rem;
-        border-top-left-radius: .8rem;
-        border-top-right-radius: .8rem;
-        right: 3.5rem;
-        bottom: 0rem;
-    }
-
-    .home__social_media img {
-        width: 1.4rem;
-    }
-
-    .about {
-        position: relative;
-        width: 90%;
-        margin-top: -2.3rem;
-    }
-
-    .about__title {
-        margin-bottom: 1.5rem;
-    }
-
-    .about__content {
-        flex-direction: column-reverse;
-        row-gap: 2rem;
-    }
-
-    .about__info {
-        width: 90%;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: .51rem;
-    }
-
-    .about__info div {
-        height: 6.5rem;
-        width: 9rem;
-        margin-inline: auto;
-    }
-
-    .about__info h2 {
-        font-size: .95rem;
-    }
-
-    .about__info h3 {
-        font-size: 0.82rem;
-    }
-
-    .about__info h4 {
-        font-size: 0.8rem;
-    }
-
-    .about__info img {
-        width: 2rem;
-    }
-
-    .about__description {
-        width: 90%;
-        padding: 1.5rem 1.6rem;
-    }
-
-    .about__description p {
-        font-size: 1rem;
-    }
-
-    .skills {
-        margin-top: 1rem;
-    }
-
-    .skills__description {
-        width: 70%;
-        font-size: 0.95rem;
-    }
-
-    .skills__content {
-        width: 80%;
-        margin-block: 1.5rem .5rem;
-        gap: 1.5rem;
-    }
-
-    .skills__tech {
-        flex-basis: 35%;
-    }
-
-    .skills__tech img {
-        width: 2.5rem;
-    }
-
-    .skills__stars {
-        margin-bottom: -0.2rem;
-    }
-
-    .skills__stars img {
-        width: 1.1rem;
-        margin-left: -0.1rem;
-    }
-
-    .skills__tech p,
-    .skills__tech h3 {
-        margin-left: 0.3rem;
-    }
-
-    .skills__tech h3 {
-        font-size: 0.9rem;
-        margin-bottom: -0.2rem;
-    }
-
-    .skills__tech p {
-        font-weight: 300;
-        font-size: 0.9rem;
-    }
-
-    .portfolio {
-        margin-top: .5rem;
-        width: 90%;
-        padding-block: 1.5rem;
-        gap: 2rem
-    }
-
-    .portfolio__content {
-        gap: 1.3rem 1rem;
-        flex-wrap: wrap;
-    }
-
-
-    .portfolio__thumbnail img {
-        width: 13rem;
-    }
-
-    .portfolio__tn_description {
-        padding-block: 0.5rem;
-        box-shadow: 0 2.5px 2px -1.5px black;
-    }
-
-    .portfolio__project_name,
-    .portfolio__project_demo {
-        margin-left: .71rem;
-    }
-
-    .portfolio__project_name {
-        font-size: 1rem;
-        margin-bottom: -2px;
-    }
-
-    .portfolio__project_demo {
-        font-size: 0.9rem;
-    }
-
-    .portfolio__btn a,
-    .blogs__btn a {
-        padding: .45rem 1rem;
-        font-size: .95rem;
-        border-radius: 2px;
-    }
-
-    /* Blogs */
-    .blogs {
-        width: 90%;
-    }
-    .blogs__description {
-        font-size: .85rem;
-    }
-    .blog__tn_title {
         font-size: 1.1rem;
     }
-    .blog__tn_description {
-        font-size: 1rem;
-        line-height: 1.2rem;
-    }
-    .blogs__thumbnail img {
-        width: 18rem;
-        height: 11rem;
-    }
-    .blogs__action {
-        width: 91%;
-        border-top: 1px solid;
-        padding-block: .2rem;
-    }
-    .blogs__like_img {
-        width: 1.7rem;
-    }
-
-    .blogs__comment_img {
-        width: 2.1rem;
-    }
-
-    .blogs__share_img {
-        width: 1.4rem;
-    }
-
-    .contact {
-        width: 90%;
-        border-radius: 5px;
-        padding-block: 2rem;
-    }
-
-    .contact__description {
-        font-size: .9rem;
-    }
-
-    .contact__content {
-        gap: 1rem 4rem;
-        margin-top: 2rem;
-    }
-
-    .contact__content img {
-        width: 2rem;
-    }
-
-    .contact__content p {
-        font-size: 1rem;
-    }
-
-    .contact__content a {
-        font-size: .9rem;
-    }
-
-    .contact__email img {
-        padding-bottom: .95rem;
-    }
-
-    .footer {
-        width: 90%;
-        gap: 3rem;
-        padding-left: 1rem;
-        padding-block: 3rem 1rem;
-    }
-
-    .footer__content {
-        gap: 6rem;
-        margin-inline: auto;
-    }
-
-    .footer__links,
-    .footer__get_started,
-    .footer__connect {
-        margin-bottom: .61rem;
-        margin-left: 2rem;
-    }
-
-    .footer__title {
-        font-size: 1.2rem;
-    }
 
     .footer__link li {
         font-size: 0.95rem;
@@ -1608,20 +1258,16 @@ main {
         border: .6px solid;
         border-radius: 1.5px;
         width: 15rem;
+        font-size: .9rem;
     }
 
     .footer__form input {
         height: 1.7rem;
     }
 
-    .footer__form textarea {
-        height: 6.5rem;
-        padding-top: 0.2rem;
-    }
-
     .footer__btn {
-        padding: 0.2rem .8rem;
-        font-size: 1rem;
+        padding: 0.1rem .6rem;
+        font-size: .9rem;
         border-radius: 2px;
         border: none;
     }
@@ -1631,7 +1277,6 @@ main {
     }
 
 }
-
 
 
 /* || For Mobile */
@@ -1688,9 +1333,8 @@ main {
         row-gap: 2rem;
         align-items: center;
         flex-direction: column;
-        background-color: #bbb;
         border-radius: 3px;
-        padding: 2rem;
+        padding: 3.5rem 2rem 2rem 2rem;
         animation: slide_in_out 1s ease-in-out;
     }
 
@@ -1705,7 +1349,6 @@ main {
     }
 
     .header__navigation-mobile .header__nav_link a {
-        color: black;
         text-decoration: none;
         display: flex;
         flex-direction: column;
@@ -1742,6 +1385,7 @@ main {
         flex-direction: column;
         width: 95%;
         padding-top: 2.5rem;
+        background-image: none;
     }
 
     .home__intro {
@@ -1996,6 +1640,7 @@ main {
     .blogs {
         width: 90%;
     }
+
     .blogs__description {
         font-size: .85rem;
     }
@@ -2014,6 +1659,7 @@ main {
         width: 16rem;
         height: 9.7rem;
     }
+
     .blogs__action {
         width: 91%;
         border-top: 1px solid;
@@ -2078,6 +1724,7 @@ main {
         border: .6px solid;
         border-radius: 1.5px;
         width: 11rem;
+        font-size: .8rem;
     }
 
     .footer__form input {

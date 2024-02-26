@@ -22,11 +22,12 @@ moon_sun_btn.addEventListener('click', () => {
 
 // Login button trigger 
 
-const login_btn = document.querySelector(".login__btn--signin")
-login_btn.addEventListener('click', () => {
-    window.location.href = "/dashboard/dashboard.html";
-});
-
+const login_btn = document.querySelector(".login__btn--signin");
+if (login_btn) {
+    login_btn.addEventListener('click', () => {
+        window.location.href = "/dashboard/dashboard.html";
+    });
+}
 // Mobile Menu
 
 let hamburger_menu_btn = document.querySelector(".header__menu_btn");
