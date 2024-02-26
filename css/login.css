@@ -20,12 +20,14 @@
     align-items: center;
     width: 60rem;
     margin-inline: auto;
-    margin-top: 2rem;
+    margin-top: 7rem;
     z-index: 100;
-    animation-name: fade-in;
-    animation-duration: .5s;
+    /* animation-name: fade-in;
+    animation-duration: .5s; */
+    background-color: var(--stn-bg-color);
 }
-@keyframes fade-in {
+
+/* @keyframes fade-in {
     from {
         opacity: 0.1;
     }
@@ -33,52 +35,66 @@
         opacity: 1;
     }
     
-}
-.login__message, .login__form {
+} */
+
+.login__message,
+.login__form {
     flex-basis: 45%;
-    height: 80vh;
 }
+
 .login__title {
     text-transform: uppercase;
     font-size: 1.7rem;
     font-weight: 600;
     margin-bottom: 2rem;
 }
+
 .login__title2 {
     font-weight: 600;
 }
+
 .login__message {
     flex-basis: 45%;
-    background-color: #B0B8BA;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding-inline: 2rem 3rem;
     row-gap: 0.6rem;
+    background-image: url(/assets/images/ellipse.svg);
+    color:  var(--font-black);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-block: 4rem;
 }
 
 .login__message p:nth-child(1) {
     font-size: 1.7rem;
 
 }
+
 .login__message p:nth-child(2) {
     font-size: 1.8rem;
     font-weight: 700;
 }
+
 /* .login__message p:nth-child(3) {
 } */
 .login__message p:nth-child(4) {
     margin-top: 2rem;
     font-weight: 600;
 }
+
 .login__form {
     flex-basis: 55%;
-    background-color: #D4DCE0;
+    background-color: var(--font-white);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding-block: 2rem;
+    color: var(--font-black);
 }
 
 .login__form_fields * {
@@ -86,17 +102,19 @@
     margin-block: 1rem;
 }
 
-.login__form_fields input{
+.login__form_fields input {
     width: 20rem;
     height: 1.5rem;
     outline: none;
     border: none;
-    border-bottom: 2px solid black;
+    border-bottom: 1.5px solid var(--font-black);
     background-color: transparent;
     padding-left: 0.5rem;
+    color: var(--font-black);
 }
+
 .login__form_fields ::placeholder {
-    color: rgb(26, 26, 26);
+    color: var(--form-gray-800);
 }
 
 .login__form p {
@@ -125,42 +143,89 @@
     margin-top: 2rem;
     background-color: #024764;
 }
+
 .login__btn--google {
     background-color: #990000;
 }
+
 .login__btn--apple {
     background-color: black;
 }
 
 /* Mobile style */
 
-@media only screen  and (max-width: 480px) {
+@media only screen and (max-width: 992px) {
     .login {
-            width: 100%;
-        }
-        .login__message {
-            display: none;
-        }
-        .login__title {
-            margin-block: 1rem;
-            font-size: 1.3rem;
-        }
-        .login__form {
-            flex-basis: 90%;
-            height: 100%;
-            padding-block: 2rem;
-        }
-        .login__form_fields * {
-            margin-top: .5rem;
-        }
-        .login__form_fields input {
-            width: 16rem;
-        }
-        .login__form p {
-            width: 16rem;
-        }
-        .login__btn {
-            width: 16rem;
-            height: 1.8rem;
-        }
+        width: 43rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .login {
+        width: 100%;
+        background-color: transparent;
+    }
+
+    .login__message {
+        display: none;
+    }
+
+    .login__form {
+        flex-basis: 80%;
+        height: 100%;
+        padding-block: 2rem;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .login {
+        width: 100%;
+        background-color: transparent;
+    }
+
+    .login__title {
+        margin-block: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .login__form {
+        flex-basis: 80%;
+        height: 100%;
+        padding-block: 2rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .login {
+        width: 100%;
+    }
+
+
+    .login__title {
+        margin-block: 1rem;
+        font-size: 1.3rem;
+    }
+
+    .login__form {
+        flex-basis: 90%;
+        height: 100%;
+        padding-block: 2rem;
+    }
+
+    .login__form_fields * {
+        margin-top: .5rem;
+    }
+
+    .login__form_fields input {
+        width: 16rem;
+    }
+
+    .login__form p {
+        width: 16rem;
+    }
+
+    .login__btn {
+        width: 16rem;
+        height: 1.8rem;
+    }
 }

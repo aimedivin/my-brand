@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AD | SignUp</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -15,16 +15,20 @@
 <body>
     <header class="header">
         <div class="header__logo">
-            <img src="/assets/icons/logo.svg" alt="" srcset="">
+            <svg width="65" height="56" viewBox="0 0 65 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M40.625 0.5L16.25 55.5H24.375L48.75 0.5H40.625ZM8.125 9.66667L0 28L8.125 46.3333H16.25L8.125 28L16.25 9.66667H8.125ZM48.75 9.66667L56.875 28L48.75 46.3333H56.875L65 28L56.875 9.66667H48.75Z"
+                    fill="black" />
+            </svg>
             <span>Aime Divin</span>
-        </div>
-        <div class="header__dark_light">
-            <a href=""><i class="fa-solid fa-moon"></i></a>
         </div>
         <div class="header__menu_btn">
             <i class="fa-solid fa-bars"></i>
         </div>
         <nav class="header__navigation" id="header__navigation">
+            <div class="header__dark_light">
+                <i class="fa-solid fa-moon"></i>
+            </div>
             <div class="header__nav_link">
                 <a href="/index.html">Home</a>
                 <a href="/index.html#about">About Me</a>
@@ -34,8 +38,10 @@
                 <a href="/index.html#contact">Contact Me</a>
             </div>
             <div class="header__login_btn">
-                <a href="">Login</a>
-                <img src="/assets/icons/🦆 icon _account login_.svg" alt="" srcset="">
+                <a href="/login-signup/login.html">
+                    Login
+                    <img src="assets/icons/🦆 icon _account login_.svg" alt="">
+                </a>
             </div>
         </nav>
     </header>
@@ -50,20 +56,26 @@
             <article class="login__form">
                 <h1 class="login__title">SignUp</h1>
                 <form action="" class="login__form_fields">
-                    <label for="firstname">
+                    <fieldset>
+                        <legend>FullName</legend>
                         <input type="text" placeholder="Your FullName" id="firstname" class="fullname" required>
-                    </label>
-                    <label for="picture" class="photo"><span>Profile photo:</span><input type="file" id="picture" required></label>
-                    
-                    <label for="date" class="dob"><span>Dob:</span>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Photo</legend>
+                        <input type="file" id="picture" required>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Dob</legend>
                         <input type="date" id="date" required>
-                    </label>
-                    <label for="email">
+                    </fieldset>
+                    <fieldset>
+                        <legend>Email</legend>
                         <input type="text" placeholder="Email" id="email" class="email" required>
-                    </label>
-                    <label for="password">
+                    </fieldset>
+                    <fieldset>
+                        <legend>Password</legend>
                         <input type="password" placeholder="Password" id="password" class="password" required>
-                    </label>
+                    </fieldset>
                     <button class="login__btn login__btn--signin">SignUp</button>
                 </form>
                 <p>Already have an account, <a href="/login-signup/login.html">SignIn</a></p>
@@ -99,8 +111,10 @@
                 <div class="footer__connect">
                     <p class="footer__title">Connect with me</p>
                     <figure class="footer__connect_icon">
-                        <a href="#"><img src="/assets/icons/Linkedin.png" alt="linkedin"></a>
-                        <a href=""><img src="/assets/icons/Github.png" alt="github"></a>
+                        <a href="https://linkedin.com/in/aime-divin-iragena-751192148" target="_blank"><img
+                                src="/assets/icons/Linkedin.png" alt="linkedin"></a>
+                        <a href="https://github.com/aimedivin" target="_blank"><img src="/assets/icons/Github.png"
+                                alt="github"></a>
                         <a href=""><img src="/assets/icons/twitter.png" alt="twitter"></a>
                     </figure>
                 </div>
@@ -114,13 +128,19 @@
                     <label for="subject">
                         <input type="text" id="subject" placeholder="Subject">
                     </label>
-                    <textarea name="" id="" cols="20" rows="10">Message</textarea>
-                    <button class="footer__btn">SEND</button>
+                    <textarea placeholder="Message"></textarea>
+                    <button class="footer__btn">SEND <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M18.25 1.75L1.75 7.25L9.65622 10.3438M18.25 1.75L12.75 18.25L9.65622 10.3438M18.25 1.75L9.65622 10.3438"
+                                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
                 </form>
             </article>
         </section>
         <section class="footer__copyright">
-            <p>Aime Divin IRAGENA 2023</p>
+            <p><i class="fa-regular fa-copyright"></i>&nbsp;Aime Divin IRAGENA 2023</p>
         </section>
     </footer>
     <script src="/js/main.js"></script>
