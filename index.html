@@ -447,13 +447,19 @@
 			<article class="footer__message">
 				<p class="footer__title">Send Message</p>
 				<form action="" class="footer__form">
+					<p class="footer__error"></p>
 					<label for="email">
 						<input type="text" id="email" placeholder="Your Email">
+						<span id="error"><i class="fa-solid fa-circle-xmark"></i></span>
 					</label>
 					<label for="subject">
 						<input type="text" id="subject" placeholder="Subject">
+						<span id="error"><i class="fa-solid fa-circle-xmark"></i></span>
 					</label>
-					<textarea placeholder="Message"></textarea>
+					<label for="message">
+						<textarea placeholder="Message" id="message"></textarea>
+						<span id="error"></span>
+					</label>
 					<button class="footer__btn">SEND <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
 							xmlns="http://www.w3.org/2000/svg">
 							<path
