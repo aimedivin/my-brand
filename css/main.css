@@ -678,21 +678,57 @@ main {
     display: block;
     margin-block: 10px;
     outline: none;
-    font-family: inherit;
+}
+.footer__error {
+    color: #ac0000;
+    font-style: italic;
+    font-size: .8rem;
+    margin-block: .5rem -.5rem;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+}
+
+.footer__form label {
+    position: relative;
+}
+
+#error {
+    font-family: unset;
+    position: absolute;
+    top: -.8rem;
+    right: .5rem;
+    font-size: .9rem;
+    display: none;
+    
+}
+
+.fa-circle-xmark {
+    color: #aa0000;
+}
+
+
+.fa-circle-check {
+    color: rgb(0, 133, 0);
 }
 
 .footer__form input,
 .footer__form textarea {
-    padding-left: 0.8rem;
+    padding-left: .5rem;
     border: 1px solid rgb(97, 97, 97);
     border-radius: 3px;
     background-color: var(--stn-bg-color);
-    font-size: 1rem;
+    font-size: .8rem;
+    font-family: inherit;
 }
-
+input:-internal-autofill-selected {
+    appearance: menulist-button;
+    background-image: none !important;
+    background-color: -internal-light-dark(rgb(0, 72, 196), rgba(5, 63, 172, 0.4)) !important;
+    color: fieldtext !important;
+}
 .footer__form input {
     height: 1.9rem;
-    width: 16rem;
+    width: 17rem;
 }
 
 .footer__form ::placeholder {
@@ -701,7 +737,7 @@ main {
 
 .footer__form textarea {
     height: 8rem;
-    width: 16rem;
+    width: 17rem;
     padding-top: 0.5rem;
 }
 
@@ -851,7 +887,7 @@ main {
         position: absolute;
         top: 1.5rem;
         left: 2rem;
-        }
+    }
 
     .header__menu_btn {
         display: block;
@@ -1746,4 +1782,16 @@ main {
     .footer__copyright {
         font-size: .8rem;
     }
+}
+
+/* Page Scroll Animation */
+
+section {
+    opacity: 0;
+
+}
+
+.show {
+    transition: all 1s;
+    opacity: 1;
 }
