@@ -679,7 +679,8 @@ main {
     margin-block: 10px;
     outline: none;
 }
-.footer__error {
+.footer__error,
+.login__error {
     color: #ac0000;
     font-style: italic;
     font-size: .8rem;
@@ -693,13 +694,11 @@ main {
 }
 
 #error {
-    font-family: unset;
     position: absolute;
     top: -.8rem;
     right: .5rem;
     font-size: .9rem;
     display: none;
-    
 }
 
 .fa-circle-xmark {
