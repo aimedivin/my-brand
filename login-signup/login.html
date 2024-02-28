@@ -56,17 +56,19 @@
             <article class="login__form">
                 <h1 class="login__title">SignIn</h1>
                 <form action="" class="login__form_fields">
+                    <p class="login__error"></p>
                     <label for="email">
-                        <input type="text" placeholder="Email / Username" id="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
-                            title="Invalid email address">
+                        <input type="text" placeholder="Email / Username" id="email">
+                        <span id="login__error_icon"><i class="fa-solid fa-circle-xmark"></i></span>
                     </label>
                     <label for="password">
-                        <input type="password" placeholder="Password" id="password" required>
+                        <input type="password" placeholder="Password" id="password">
+                        <span id="login__error_icon"><i class="fa-solid fa-circle-xmark"></i></span>
                     </label>
                     <button class="login__btn login__btn--signin">SignIn</button>
                 </form>
-                <p>Forgot password ? <a href="">Click here</a></p>
-                <p>Create an account, <a href="/login-signup/signup.html">SignUp</a></p>
+                <p class="login__action">Forgot password ? <a href="">Click here</a></p>
+                <p class="login__action">Create an account, <a href="/login-signup/signup.html">SignUp</a></p>
                 <form action="" class="login__form_with">
                     <h1 class="login__title2">Or</h1>
                     <button class="login__btn login__btn--google">Signin with Google</button>
@@ -79,16 +81,16 @@
         <section class="footer__content">
             <article>
                 <!-- <div class="footer__links">
-                    <p class="footer__title">Quick Links</p>
-                    <ul class="footer__link">
-                        <li>Home</li>
-                        <li>About ME</li>
-                        <li>Skills</li>
-                        <li>Portfolio</li>
-                        <li>Blogs</li>
-                        <li>Contact Me</li>
-                    </ul>
-                </div> -->
+    					<p class="footer__title">Quick Links</p>
+    					<ul class="footer__link">
+    						<li>Home</li>
+    						<li>About ME</li>
+    						<li>Skills</li>
+    						<li>Portfolio</li>
+    						<li>Blogs</li>
+    						<li>Contact Me</li>
+    					</ul>
+    				</div> -->
                 <div class="footer__get_started">
                     <p class="footer__title">Get started</p>
                     <ul class="footer__link">
@@ -110,13 +112,19 @@
             <article class="footer__message">
                 <p class="footer__title">Send Message</p>
                 <form action="" class="footer__form">
-                    <label for="email">
-                        <input type="text" id="email" placeholder="Your Email">
+                    <p class="footer__error"></p>
+                    <label for="footer-email">
+                        <input type="text" id="footer-email" placeholder="Your Email">
+                        <span id="error"><i class="fa-solid fa-circle-xmark"></i></span>
                     </label>
                     <label for="subject">
                         <input type="text" id="subject" placeholder="Subject">
+                        <span id="error"><i class="fa-solid fa-circle-xmark"></i></span>
                     </label>
-                    <textarea placeholder="Message"></textarea>
+                    <label for="message">
+                        <textarea placeholder="Message" id="message"></textarea>
+                        <span id="error"></span>
+                    </label>
                     <button class="footer__btn">SEND <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -132,6 +140,7 @@
         </section>
     </footer>
     <script src="/js/main.js"></script>
+    <script src="/js/form-validation.js"></script>
 </body>
 
 </html>
