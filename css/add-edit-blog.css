@@ -1,15 +1,51 @@
+.content__add_edit {
+    background-color: #92989af8;
+    padding: 1rem 1.5rem;
+    position: fixed;
+    width: 55%;
+    top: 4rem;
+    margin-left: 5rem;
+    display: none;
+    flex-direction: column;
+    row-gap: 2rem;
+    border-radius: .5rem;
+}
+
+.content__close_btn {
+    align-self: flex-end;
+}
+
+.fa-xmark {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.content__add_edit_title {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin: -1.5rem 0 0 2rem;
+}
+
 .content__add_edit_form {
-    width: 60%;
+    width: 55%;
     margin-inline: auto;
 }
 
+.error-message {
+    color: #9f0101;
+    font-size: .8rem;
+    margin-block: .5rem -1rem;
+    font-style: italic;
+    display: none;
+}
 .content__add_edit_form label,
 .content__add_edit_form textarea {
-    width: 90%;
+    width: 100%;
     padding: .5rem;
     border: 1px solid;
     border-radius: 3px;
-    background-color: rgba(255, 255, 255, 0.559);
+    background-color: rgba(227, 235, 241, 0.729);
 }
 
 .content__add_edit_form label,
@@ -24,11 +60,15 @@
     display: flex;
     justify-content: space-between;
 }
+.content__add_edit_form label span {
+    flex-basis: 40%;
+}
 
 .content__add_edit_form input {
     border: none;
     background: none;
     outline: none;
+    width: 100%;
 }
 
 .content__add_edit_form ::placeholder {
@@ -43,7 +83,7 @@
 
 .content__add_edit_form button {
     padding: .4rem .5rem;
-    background-color: rgb(7, 81, 106);
+    background-color: var(--sbr-bg-color);
     color: white;
     border: none;
     border-radius: 2px;
@@ -52,19 +92,21 @@
 
 @media only screen and (max-width: 992px) {
     .content__add_edit_form {
-            width: 80%;
-            margin-inline: auto;
-        }
+        width: 80%;
+        margin-inline: auto;
+    }
 }
+
 @media only screen and (max-width: 768px) {
     .content__add_edit_form {
-            width: 85%;
-            margin-inline: auto;
-        }
+        width: 85%;
+        margin-inline: auto;
+    }
 }
+
 @media only screen and (max-width: 576px) {
     .content__add_edit_form {
-            width: 90%;
-            margin-inline: auto;
-        }
+        width: 90%;
+        margin-inline: auto;
+    }
 }

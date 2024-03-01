@@ -539,6 +539,7 @@ main {
     .content {
         padding: 4.5rem 1rem;
         width: 100%;
+        position: relative;
     }
 
     .content__header_action {
