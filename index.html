@@ -9,9 +9,91 @@
 		integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/login.css">
+	<link rel="stylesheet" href="css/signup.css">
 </head>
 
-<body class="dark-moe">
+<body>
+	<section class="signup signup--hide-show">
+		<div class="signup--container">
+			<p class="signup--close-btn"><i class="fa-solid fa-xmark"></i></p>
+			<article class="signup__message">
+				<p>Hello,</p>
+				<p>Welcome<br>to our community!</p>
+				<p>Get started by creating your account below. <br><br>
+					We're excited to have you join us on this journey."</p>
+			</article>
+			<article class="signup__form">
+				<h1 class="signup__title">SignUp</h1>
+				<p class="signup__error_message"></p>
+				<form action="" class="signup__form_fields">
+					<fieldset>
+						<legend>FullName</legend>
+						<input type="text" placeholder="Your FullName" id="signup-fullname" class="fullname">
+						<span id="signup__error"></span>
+					</fieldset>
+					<fieldset>
+						<legend>Photo</legend>
+						<input type="file" id="signup-picture">
+					</fieldset>
+					<fieldset>
+						<legend>Dob</legend>
+						<input type="date" id="signup-date">
+					</fieldset>
+					<fieldset>
+						<legend>Email</legend>
+						<input type="text" placeholder="Email" id="signup-email" class="email">
+						<span id="signup__error"><i class="fa-solid fa-circle-xmark"></i></span>
+					</fieldset>
+					<fieldset>
+						<legend>Password</legend>
+						<input type="password" placeholder="Password" id="signup-password" class="password">
+						<span id="signup__error"><i class="fa-solid fa-circle-xmark"></i></span>
+					</fieldset>
+					<button class="signup__btn signup__btn--signin">SignUp</button>
+				</form>
+				<p class="signup-link">Already have an account, <a href="">SignIn</a></p>
+				<form action="" class="signup__form_with">
+					<h1 class="signup__title2">Or</h1>
+					<button class="signup__btn signup__btn--google">SignUp with Google</button>
+					<button class="signup__btn signup__btn--apple">SignUp With Apple</button>
+				</form>
+			</article>
+		</div>
+	</section>
+	<section class="login login--hide-show">
+		<div class="login--container">
+			<p class="login--close-btn"><i class="fa-solid fa-xmark"></i></p>
+			<article class="login__message">
+				<p>Hello,</p>
+				<p>Welcome Back!</p>
+				<p>Please enter your credentials to continues accessing your account</p>
+				<p>We're excited to have you here again.</p>
+			</article>
+			<article class="login__form">
+				<h1 class="login__title">SignIn</h1>
+				<form action="" class="login__form_fields">
+					<p class="login__error"></p>
+					<label for="email">
+						<input type="text" placeholder="Email / Username" id="email">
+						<span id="login__error_icon"><i class="fa-solid fa-circle-xmark"></i></span>
+					</label>
+					<label for="password">
+						<input type="password" placeholder="Password" id="password">
+						<span id="login__error_icon"><i class="fa-solid fa-circle-xmark"></i></span>
+					</label>
+					<button class="login__btn login__btn--signin">SignIn</button>
+				</form>
+				<p class="login__action">Forgot password ? <a href="">Click here</a></p>
+				<p class="login__action login-link">Create an account, <a href="/login-signup/signup.html">SignUp</a></p>
+				<form action="" class="login__form_with">
+					<h1 class="login__title2">Or</h1>
+					<button class="login__btn login__btn--google">Signin with Google</button>
+					<button class="login__btn login__btn--apple">SignIn With Apple</button>
+				</form>
+			</article>
+		</div>
+	</section>
 	<header class="header">
 		<div class="header__logo">
 			<svg width="65" height="56" viewBox="0 0 65 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -458,7 +540,7 @@
 					</label>
 					<label for="message">
 						<textarea placeholder="Message" id="message"></textarea>
-						<span id="error"></span>
+						<span id="error"><i class="fa-solid fa-circle-xmark"></i></span>
 					</label>
 					<button class="footer__btn">SEND <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
 							xmlns="http://www.w3.org/2000/svg">
@@ -477,6 +559,7 @@
 	<!-- <script src="js/login-signup.js"></script> -->
 	<script src="/js/main.js"></script>
 	<script src="/js/form-validation.js"></script>
+	<script src="/js/signup.js"></script>
 </body>
 
 </html>

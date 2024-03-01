@@ -15,16 +15,27 @@
 }
 
 .login {
+    width: 100%;
+    margin-inline: auto;
+    padding: 5.5rem 13rem;
+    position: sticky;
+    top: 0rem;
+    margin-inline: auto;
+    z-index: 2000;
+    /* animation-name: fade-in; */
+    /* animation-duration: .5s;  */
+    background-color: rgba(30, 29, 29, 0.83);
+    display: none;
+}
+.login--container,
+.signup--container {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60rem;
-    margin-inline: auto;
-    margin-top: 7rem;
-    z-index: 100;
-    /* animation-name: fade-in;
-    animation-duration: .5s; */
+    width: 100%;
     background-color: var(--stn-bg-color);
+    position: relative;
+    border-radius: 1.5rem;
 }
 
 /* @keyframes fade-in {
@@ -36,6 +47,20 @@
     }
     
 } */
+.login--close-btn,
+.signup--close-btn {
+    position: absolute;
+    top: .5rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--font-black);
+}
+.login--close-btn:hover,
+.signup--close-btn:hover {
+    transition: .5s;
+    color: #bf0f0f;
+}
 
 .login__message,
 .login__form {
@@ -46,7 +71,6 @@
     text-transform: uppercase;
     font-size: 1.7rem;
     font-weight: 600;
-    margin-bottom: 2rem;
 }
 
 .login__title2 {
@@ -61,11 +85,13 @@
     padding-inline: 2rem 3rem;
     row-gap: 0.6rem;
     background-image: url(/assets/images/ellipse.svg);
-    color:  var(--font-black);
+    background-color: var(--stn);
+    color: var(--font-black);
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
-    padding-block: 4rem;
+    padding-block: 9.85rem;
+    height: 100%;
 }
 
 .login__message p:nth-child(1) {
@@ -93,17 +119,21 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-block: 2rem;
+    padding-block: 4rem 3rem;
     color: var(--font-black);
+    border-bottom-right-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
 }
 
 .login__form_fields * {
     display: block;
     margin-block: 1rem;
 }
+
 .login__form label {
     position: relative;
 }
+
 #login__error_icon {
     position: absolute;
     top: -1.6rem;
@@ -111,6 +141,7 @@
     font-size: .9rem;
     display: none;
 }
+
 .login__error {
     padding-left: .5rem;
     padding-bottom: .5rem;
@@ -173,7 +204,12 @@
 
 @media only screen and (max-width: 992px) {
     .login {
-        width: 43rem;
+        width: 100%;
+        padding: 7rem 5rem;
+    }
+
+    .login__message {
+        padding-block: 8.5rem;
     }
 }
 

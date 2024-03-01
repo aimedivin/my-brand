@@ -4,9 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Message</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Blogs</title>
     <link rel="stylesheet" href="/css/dashboard.css">
     <link rel="stylesheet" href="/css/blog.css">
+    <link rel="stylesheet" href="/css/add-edit-blog.css">
 </head>
 
 <body>
@@ -113,41 +117,25 @@
                     <a href="/dashboard/add-edit-blog.html" class="btn-new-blog">New Blog +</a>
                 </form>
             </div>
+            <div class="content__add_edit">
+                <div class="content__close_btn"><i class="fa-solid fa-xmark"></i></div>
+                <p class="content__add_edit_title">UPdate</p>
+                <form action="" class="content__add_edit_form">
+                    <p class="error-message"></p>
+                    <label for="title">
+                        <input type="text" id="title" placeholder="Title" autofocus>
+                    </label>
+                    <p class="error-message"></p>
+                    <label for="photo">
+                        <span>Blog Photo:</span>
+                        <input type="file" id="photo">
+                    </label>
+                    <p class="error-message"></p>
+                    <textarea name="" id="description" placeholder="Description"></textarea>
+                    <button type="submit"></button>
+                </form>
+            </div>
             <div class="content__main content__main_blogs">
-                <div class="content__blog">
-                    <div class="content__blog_thumbnail">
-                        <img src="/assets/images/blog-photo.png" alt="">
-                    </div>
-                    <div class="content__blog_info">
-                        <h1>Journeying Through Creativity</h1>
-                        <h2>Creativity is a journey of self-discovery and expression, guiding us through the depths of
-                            imagination and innovation.
-                            Let's delv...</h2>
-                        <p></p>
-                        <form action="" class="content__blog_cta_btn">
-                            <a href="/dashboard/add-edit-blog.html" class="btn-edit">Edit</a>
-                            <a href="/dashboard/add-edit-blog.html" class="btn-delete">Delete</a>
-                        </form>
-                    </div>
-                </div>
-                <hr>
-                <div class="content__blog">
-                    <div class="content__blog_thumbnail">
-                        <img src="/assets/images/blog-photo.png" alt="">
-                    </div>
-                    <div class="content__blog_info">
-                        <h1>Journeying Through Creativity</h1>
-                        <h2>Creativity is a journey of self-discovery and expression, guiding us through the depths of
-                            imagination and innovation.
-                            Let's delv...</h2>
-                        <p></p>
-                        <form action="" class="content__blog_cta_btn">
-                            <input type="hidden" name="" value="">
-                            <a href="/dashboard/add-edit-blog.html" class="btn-edit">Edit</a>
-                            <a href="/dashboard/add-edit-blog.html" class="btn-delete">Delete</a>
-                        </form>
-                    </div>
-                </div>
             </div>
         </section>
     </main>
