@@ -17,9 +17,9 @@ const circleXmark = '<i class="fa-solid fa-circle-xmark"></i>';
 //     loginForm.addEventListener('input', (e) => {
 //         let target = e.target;
 //         loginCount++;
-        
+
 //         loginForm.firstElementChild.innerText = '';
-        
+
 //         loginErrorField.forEach(el => {
 //             el.style.borderColor = 'black'
 //         });
@@ -43,7 +43,7 @@ const circleXmark = '<i class="fa-solid fa-circle-xmark"></i>';
 //             if (loginErrorField.indexOf(target) != -1) {
 //                 loginErrorField.splice(loginErrorField.indexOf(target), 1);
 //             }
-            
+
 //             target.nextElementSibling.innerHTML = circleCheck;
 //         }
 //         // console.log(errorField);
@@ -77,6 +77,11 @@ const circleXmark = '<i class="fa-solid fa-circle-xmark"></i>';
 // ----Send us message form
 const footerForm = document.querySelector('.footer__form');
 const email = document.getElementById('footer-email');
+const message = document.getElementById('message');
+const subject = document.getElementById('subject');
+
+const messageConfirmation = document.querySelector('.message--confirmation')
+
 let footerFormError = false;
 let errorField = []
 let footerCount = 0;
@@ -118,7 +123,7 @@ footerForm.addEventListener('input', (e) => {
         errorField.push(target);
     }
     if (!footerFormError && errorField.includes(target)) {
-            errorField.splice(errorField.indexOf(target), 1);
+        errorField.splice(errorField.indexOf(target), 1);
     }
     console.log(errorField);
 });
@@ -140,13 +145,37 @@ footerForm.addEventListener('submit', (e) => {
             }
         }
     }
-    if (footerCount == 0) {
+    else if ((footerCount == 0) || !(/^[^\s@]+@[^\s@]+\.[^\s@]+$/).test(email.value) || (message.value.split(" ").join("").length < 5) || subject.value.split(" ").join("").length < 5) {
         footerForm.firstElementChild.innerText = 'Fill in all Field';
         console.log(Array.from(footerForm.children))
     }
-    console.log(errorField.length);
+    else {
+        let messages = JSON.parse(window.localStorage.getItem('messages'));
+        let newMessage = {
+            email: email.value,
+            subject: subject.value,
+            text: message.value
+        }
 
+        if (!messages) {
+            localStorage.setItem('messages', JSON.stringify([newMessage]))
+        } else {
+            console.log('in');
+            messages.push(newMessage)
+            localStorage.setItem('messages', JSON.stringify(messages));
+        }
+        messageConfirmation.style.display = "flex";
+        email.value = '';
+        email.nextElementSibling.style.display = 'none';
+        subject.value = '';
+        subject.nextElementSibling.style.display = 'none';
+        message.value = '';
+        message.nextElementSibling.style.display = 'none';
 
+        setTimeout(() => {
+            messageConfirmation.style.display = "none";
+        }, 3000);
+    }
     e.preventDefault();
 }
 );
