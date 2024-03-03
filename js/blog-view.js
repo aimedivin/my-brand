@@ -8,7 +8,6 @@ const blogTnTitle = document.getElementsByClassName('blog__tn_title');
 
 window.addEventListener('load', () => {
     Array.from(blogTnTitle).forEach(el => {
-        console.log('in');
         el.addEventListener('click', (e) => {
             let blogContainer = '';
             let blogIndex = ''
