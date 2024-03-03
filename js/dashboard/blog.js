@@ -11,7 +11,7 @@ const allBlogs = () => {
                     </div>
                     <div class="content__blog_info">
                         <h1>${element.title}</h1>
-                        <h2>${element.description}</h2>
+                        <h2>${element.description.slice(0,170)} ...</h2>
                         <p></p>
                         <form action="" class="content__blog_cta_btn">
                             <input type="hidden" name="" value="${index}">
@@ -163,7 +163,7 @@ editAddForm.addEventListener('submit', e => {
     if (title.value.split(' ').join('').length < 4) {
         errorFieldsForms.push(title)
     }
-    if (description.value.split(' ').join('').length < 5) {
+    if (description.value.split(' ').join('').length < 100) {
         errorFieldsForms.push(description)
     }
 
@@ -184,7 +184,7 @@ editAddForm.addEventListener('submit', e => {
                 
             }
             if (el.id == 'description') {
-                el.previousElementSibling.innerText = "Enter valid description | *min = 50 characters";
+                el.previousElementSibling.innerText = "Enter valid description | *min = 100 characters";
                 el.previousElementSibling.style.display = "block";
             }
         })

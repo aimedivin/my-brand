@@ -24,9 +24,10 @@
     /* animation-name: fade-in; */
     /* animation-duration: .5s;  */
     background-color: rgba(30, 29, 29, 0.83);
-    /* display: none; */
+    display: none;
 }
-
+/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae dolores consequatur nihil corporis. Corporis,
+sed? Dignissimos velit dolor nihil placeat praesentium et tenetur beatae vel. Iste voluptatum sapiente fugit vero? */
 
 .signup__title2 {
     font-weight: 600;

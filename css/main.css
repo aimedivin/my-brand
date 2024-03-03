@@ -47,8 +47,8 @@ body {
     background-color: var(--bg-color);
     letter-spacing: -1.2px;
     position: relative;
+    /* overflow: hidden; */
 }
-
 
 /* || ELEMENTS */
 .portfolio__title,
@@ -82,7 +82,7 @@ main {
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
     background-color: var(--font-white);
     display: flex;
     justify-content: space-around;
@@ -544,7 +544,6 @@ main {
 .blogs__action {
     width: 91%;
     border-top: 1.5px solid;
-    padding-block: .4rem;
 }
 
 .blogs__cta_btn {
@@ -559,15 +558,15 @@ main {
 }
 
 .blogs__like_img {
-    width: 2rem;
+    width: 1.5rem;
 }
 
 .blogs__comment_img {
-    width: 2.3rem;
+    width: 1.9rem;
 }
 
 .blogs__share_img {
-    width: 1.5rem;
+    width: 1.3rem;
 }
 
 
@@ -700,7 +699,7 @@ main {
     top: -.8rem;
     right: .5rem;
     font-size: .9rem;
-    /* display: none; */
+    display: none;
 }
 
 .fa-circle-xmark {
@@ -1793,6 +1792,6 @@ section {
 }
 
 .show {
-    transition: all 1s;
+    transition: all .5s;
     opacity: 1;
 }
