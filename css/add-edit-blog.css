@@ -1,5 +1,5 @@
 .content__add_edit {
-    background-color: #92989af8;
+    background-color: var(--box-color);
     padding: 1rem 1.5rem;
     position: fixed;
     width: 55%;
@@ -43,9 +43,9 @@
 .content__add_edit_form textarea {
     width: 100%;
     padding: .5rem;
-    border: 1px solid;
+    border: 1px solid var(--gray-700);
     border-radius: 3px;
-    background-color: rgba(227, 235, 241, 0.729);
+    background-color: var(--gray-200);
 }
 
 .content__add_edit_form label,
@@ -54,6 +54,7 @@
     display: block;
     margin-top: 1rem;
     margin-inline: auto 3rem;
+    
 }
 
 .content__add_edit_form label {
@@ -69,16 +70,17 @@
     background: none;
     outline: none;
     width: 100%;
+    color: var(--font-black);
 }
 
 .content__add_edit_form ::placeholder {
-    color: black;
+    color: var(--font-black);
 }
 
 .content__add_edit_form textarea {
     height: 12rem;
     text-align: left;
-    outline: none;
+    outline: none;color: var(--font-black);
 }
 
 .content__add_edit_form button {
