@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DashBoard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/dashboard.css">
 </head>
 
-<body>
+<body">
     <main>
         <section class="sidebar">
             <div class="sidebar__logo">
@@ -86,6 +89,9 @@
         <section class="content">
             <div class="content__header">
                 <p class="content__header_message">Welcome back, Divin<br><span>Thursday, 22 feb 2024</span> </p>
+                <div class="header__dark_light">
+                    <i class="fa-solid fa-moon"></i>
+                </div>
                 <div class="content__header_action">
                     <span class="content__header_notification">
                         <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -110,7 +116,7 @@
             <div class="content__status">
                 <div class="content__status_visitor">
                     <div>
-                        <p class="content__status_title">Visitors</p>
+                        <h1 class="content__status_title">Visitors</h1>
                         <p>3230</p>
                     </div>
                     <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -131,7 +137,7 @@
                 </div>
                 <div class="content__status_user">
                     <div>
-                        <p class="content__status_title">Users</p>
+                        <h1 class="content__status_title">Users</h1>
                         <p>500</p>
                     </div>
 
@@ -157,7 +163,7 @@
                 </div>
                 <div class="content__status_visitor">
                     <div>
-                        <p class="content__status_title">Blogs</p>
+                        <h1 class="content__status_title">Blogs</h1>
                         <p class="content__status_blog_value">2</p>
                     </div>
                     <svg width="45" height="46" viewBox="0 0 45 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -204,52 +210,9 @@
                             <th>Subject</th>
                             <th>Action</th>
                             </tr>
-                            <tr>
-                                <td>example<span>@gmail.com</span> </td>
-                                <td>Invitation to Even...</td>
-                                <td>
-                                    <form action="">
-                                        <button class="content__data_btn">Reply</button>
-                                    </form>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>example<span>@gmail.com</span> </td>
-                                <td>Invitation to Even...</td>
-                                <td>
-                                    <form action="">
-                                        <button class="content__data_btn">Reply</button>
-                                    </form>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>example<span>@gmail.com</span> </td>
-                                <td>Invitation to Even...</td>
-                                <td>
-                                    <form action="">
-                                        <button class="content__data_btn">Reply</button>
-                                    </form>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>example<span>@gmail.com</span> </td>
-                                <td>Invitation to Even...</td>
-                                <td>
-                                    <form action="">
-                                        <button class="content__data_btn">Reply</button>
-                                    </form>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>example<span>@gmail.com</span> </td>
-                                <td>Invitation to Even...</td>
-                                <td>
-                                    <form action="">
-                                        <button class="content__data_btn">Reply</button>
-                                    </form>
-                                </td>
-                            </tr>
                         </table>
+
+                        <a class="content__load_more" href="/dashboard/message.html">Load more...</a>
                     </div>
                 </div>
                 <div class="content__blog_comment">
@@ -310,6 +273,7 @@
             </div>
         </section>
     </main><script src="/js/dashboard/dashboard.js"></script>
+    <script src="/js/dashboard/dark-mode.js"></script>
 </body>
 
 </html>

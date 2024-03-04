@@ -4,11 +4,13 @@
 :root {
     --bg-color: #cecece;
     --sbr-bg-color: #09353f;
-    --btn-secondary-color: #912525;
+    --btn-secondary-color: #970000;
     --btn-hover-active-color: #ffd703;
     --box-color: #e6e6e6;
     --gray-700: rgb(53, 53, 53);
     --gray-200: #F2F2F2;
+    --font-black: #000;
+    --font-white: #fff;
 }
 
 /* RESET */
@@ -17,6 +19,18 @@
     padding: 0;
     box-sizing: border-box;
     font: inherit;
+}
+
+.dark-mode {
+    --bg-color: hsl(0, 0%, 15%);
+    --sbr-bg-color: #09353f;
+    --btn-secondary-color: #970000;
+    --btn-hover-active-color: #ffd703;
+    --box-color: #1d1d1d;
+    --gray-700: rgb(150, 150, 150);
+    --gray-200: #2e2e2e;
+    --font-black: #fff;
+    --font-white: #000;
 }
 
 body {
@@ -102,6 +116,7 @@ main {
 .sidebar__action {
     display: flex;
     flex-direction: column;
+    row-gap: .5rem;
 }
 
 /* Content */
@@ -114,6 +129,7 @@ main {
     display: flex;
     flex-direction: column;
     row-gap: 2rem;
+    color: var(--font-black);
 }
 
 .content__header {
@@ -134,9 +150,23 @@ main {
     color: var(--gray-700);
 }
 
+.content__header_action {
+    display: flex;
+    align-items: center;
+}
+
 .content__header_action svg {
     width: 1.8rem;
     margin-right: 1rem;
+    stroke: var(--font-black);
+}
+.content__header_action svg path {
+    fill: var(--font-black);
+}
+
+.header__dark_light i {
+    font-size: 1.2rem;
+    cursor: pointer;
 }
 
 .content__title {
@@ -151,11 +181,12 @@ main {
     margin-top: 1rem;
 }
 
+
 .content__status>div {
     flex-basis: 30%;
     background-color: var(--box-color);
     border-radius: 5px;
-    box-shadow: 1px 2.5px 4px -2px black;
+    box-shadow: 1px 2.5px 4px -2px rgb(0, 0, 0);
     padding: 1rem;
     display: flex;
     justify-content: space-between;
@@ -170,10 +201,14 @@ main {
     font-size: 1.2rem;
     font-weight: 600;
 }
+.content__status p {
+    font-size: .85rem;
+}
 
 .content__main {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 3rem;
 }
 
 .content__main_title {
@@ -190,6 +225,9 @@ main {
     background-color: var(--box-color);
     padding: 1rem;
     border-radius: 5px;
+}
+.content__data path {
+    fill: var(--font-black);
 }
 
 .content__data_action {
@@ -232,6 +270,14 @@ main {
 }
 
 /* Next page division */
+.content__load_more {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-block: 1.5rem;
+    color: #0094b9;
+    text-decoration: none;
+}
 
 .content__next {
     background-color: rgb(54, 52, 52);
