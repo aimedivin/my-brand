@@ -98,7 +98,6 @@ contentMainBlogs.addEventListener('click', e => {
         photo.previousElementSibling.innerText = 'Update Photo';
         editAddForm.reset();
         photoDataUrl = blogs[blogIndex].photo;
-        photo.value = blogs[blogIndex].photo;
         description.value = blogs[blogIndex].description;
         title.value = blogs[blogIndex].title;
     }
@@ -154,6 +153,7 @@ description.addEventListener('input', () => {
 
 // Submit Event for the Add new blog form
 editAddForm.addEventListener('submit', e => {
+    console.log(photo.files[0].name);
     let blogs = JSON.parse(localStorage.getItem('blogs'));
     let blogIndex = JSON.parse(localStorage.getItem('updateIndex'));
     e.preventDefault();
