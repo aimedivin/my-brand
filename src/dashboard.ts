@@ -1,15 +1,17 @@
+// Getting Page Title
+const title = document.querySelector('title') as HTMLTitleElement;
+
+
 // Blog Status update
 
 const statusBlogValue = document.querySelector('.content__status_blog_value') as HTMLParagraphElement;
 
 const blogNumber = JSON.parse(window.localStorage.getItem('blogs')!);
-statusBlogValue.innerText = blogNumber.length;
+if (statusBlogValue) statusBlogValue.innerText = blogNumber.length;
 
+// Displaying Messages
 
-// Message Display
-
-
-export function displayMessage(page?: string): void {
+function displayMessage(): void {
     const contentDataTable = document.querySelector('.content__data_table') as HTMLTableElement;
 
     const dashMessage = JSON.parse(localStorage.getItem('messages')!)
@@ -19,7 +21,7 @@ export function displayMessage(page?: string): void {
 
     for (let i = 0; i < dashMessage.length; i++) {
 
-        if (i == 5 && page !== 'message') break;
+        if (i == 5 && (title.innerText.toLowerCase() == 'dashboard') ) break;
 
         const tableRow = document.createElement('tr')
 
@@ -38,8 +40,6 @@ export function displayMessage(page?: string): void {
 
         colForm.appendChild(colFormBtn)
         col3.appendChild(colForm);
-
-        console.log('in');
 
         tableRow.appendChild(col1);
         tableRow.appendChild(col2);
