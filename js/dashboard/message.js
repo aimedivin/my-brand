@@ -6,7 +6,6 @@ const fargment = document.createDocumentFragment();
 
 
 for (let i = 0; i < dashMessage.length; i++) {
-    if (i == 6) break;
 
     const tableRow = document.createElement('tr')
 

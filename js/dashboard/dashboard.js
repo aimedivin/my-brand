@@ -1,7 +1,10 @@
 const statusBlogValue = document.querySelector('.content__status_blog_value');
 
 const blogNumber = JSON.parse(window.localStorage.getItem('blogs'));
-statusBlogValue.innerText = blogNumber.length;
+if (statusBlogValue) {
+    statusBlogValue.innerText = blogNumber.length;
+}
+
 
 // Message Display
 
@@ -13,7 +16,7 @@ const fargment = document.createDocumentFragment();
 
 
 for (let i = 0; i < dashMessage.length; i++) {
-    if (i == 6) break;
+    if (i == 5) break;
 
     const tableRow = document.createElement('tr')
 

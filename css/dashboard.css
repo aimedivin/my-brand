@@ -4,6 +4,7 @@
 :root {
     --bg-color: #cecece;
     --sbr-bg-color: #09353f;
+    --btn-hover-color: #065364;
     --btn-secondary-color: #970000;
     --btn-hover-active-color: #ffd703;
     --box-color: #e6e6e6;
@@ -261,12 +262,17 @@ main {
 }
 
 .content__data_btn {
-    padding: 0.2rem 0.5rem;
+    padding: 0.1rem .5rem .3rem 0.5rem;
     background-color: var(--sbr-bg-color);
     color: white;
     border: none;
-    border-radius: 2px;
+    border-radius: 3px;
     cursor: pointer;
+    transition: .3s;
+}
+
+.content__data_btn:hover {
+    background-color: var(--btn-hover-color);
 }
 
 /* Next page division */
@@ -274,7 +280,7 @@ main {
     display: block;
     font-size: 0.9rem;
     font-weight: 600;
-    margin-block: 1.5rem;
+    margin-block: .6rem;
     color: #0094b9;
     text-decoration: none;
 }
