@@ -1,14 +1,18 @@
+"use strict";
+// Getting Page Title
+const title = document.querySelector('title');
 // Blog Status update
 const statusBlogValue = document.querySelector('.content__status_blog_value');
 const blogNumber = JSON.parse(window.localStorage.getItem('blogs'));
-statusBlogValue.innerText = blogNumber.length;
-// Message Display
-export function displayMessage(page) {
+if (statusBlogValue)
+    statusBlogValue.innerText = blogNumber.length;
+// Displaying Messages
+function displayMessage() {
     const contentDataTable = document.querySelector('.content__data_table');
     const dashMessage = JSON.parse(localStorage.getItem('messages'));
     const fragment = document.createDocumentFragment();
     for (let i = 0; i < dashMessage.length; i++) {
-        if (i == 5 && page !== 'message')
+        if (i == 5 && (title.innerText.toLowerCase() == 'dashboard'))
             break;
         const tableRow = document.createElement('tr');
         const col1 = document.createElement('td');
@@ -22,7 +26,6 @@ export function displayMessage(page) {
         colFormBtn.textContent = 'Reply';
         colForm.appendChild(colFormBtn);
         col3.appendChild(colForm);
-        console.log('in');
         tableRow.appendChild(col1);
         tableRow.appendChild(col2);
         tableRow.appendChild(col3);
