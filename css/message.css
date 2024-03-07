@@ -44,8 +44,10 @@
 .content__data_dbtn svg {
     width: 1.1rem;
 }
+
 .content__data_dbtn path {
-    fill: var(--btn-secondary-color)
+    fill: var(--btn-secondary-color);
+    cursor: pointer;
 }
 
 .content__data_table td {
