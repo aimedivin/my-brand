@@ -52,6 +52,7 @@ footerForm.addEventListener('input', (e) => {
     if (footerFormError && !errorField.includes(target)) {
         errorField.push(target);
     }
+    
     if (!footerFormError && errorField.includes(target)) {
         errorField.splice(errorField.indexOf(target), 1);
     }
@@ -86,7 +87,7 @@ footerForm.addEventListener('submit', (e) => {
     }
 
     else {
-        let messages = JSON.parse(window.localStorage.getItem('messages')!);
+        let messages: Array<object>= JSON.parse(window.localStorage.getItem('messages')!);
         let newMessage = {
             email: email.value,
             subject: subject.value,
@@ -96,7 +97,6 @@ footerForm.addEventListener('submit', (e) => {
         if (!messages) {
             localStorage.setItem('messages', JSON.stringify([newMessage]))
         } else {
-            console.log('in');
             messages.push(newMessage)
             localStorage.setItem('messages', JSON.stringify(messages));
         }
@@ -118,5 +118,4 @@ footerForm.addEventListener('submit', (e) => {
     }
 
     e.preventDefault();
-}
-);
+});
