@@ -534,6 +534,7 @@ main {
         height: 3.5rem;
         padding-left: 1rem;
         background-color: var(--bg-color);
+        z-index: 1000;
     }
 
     .sidebar__action {
@@ -544,7 +545,7 @@ main {
         display: flex;
         flex-direction: row;
         font-size: 0.85rem;
-        color: black;
+        color: var(--font-black);
         font-weight: 700;
     }
 
@@ -554,11 +555,11 @@ main {
 
     .sidebar__link--logo svg {
         width: 1.5rem;
-        fill: black;
+        fill: var(--font-black);
     }
 
     .sidebar__link--logo svg path {
-        fill: black;
+        fill: var(--font-black);
     }
 
     .sidebar__link--logo span {
