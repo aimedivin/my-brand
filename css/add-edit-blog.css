@@ -3,7 +3,7 @@
     padding: 1rem 1.5rem;
     position: fixed;
     width: 55%;
-    top: 4rem;
+    top: 7rem;
     margin-left: 5rem;
     display: none;
     flex-direction: column;
@@ -39,6 +39,7 @@
     font-style: italic;
     display: none;
 }
+
 .content__add_edit_form label,
 .content__add_edit_form textarea {
     width: 100%;
@@ -54,13 +55,14 @@
     display: block;
     margin-top: 1rem;
     margin-inline: auto 3rem;
-    
+
 }
 
 .content__add_edit_form label {
     display: flex;
     justify-content: space-between;
 }
+
 .content__add_edit_form label span {
     flex-basis: 40%;
 }
@@ -80,7 +82,8 @@
 .content__add_edit_form textarea {
     height: 12rem;
     text-align: left;
-    outline: none;color: var(--font-black);
+    outline: none;
+    color: var(--font-black);
 }
 
 .content__add_edit_form button {
@@ -100,15 +103,139 @@
 }
 
 @media only screen and (max-width: 768px) {
+    .content__add_edit {
+        padding: 1.5rem ;
+        position: fixed;
+        width: 70%;
+        top: 9.5rem;
+        margin-left: 1rem;
+        row-gap: 1.5rem;
+    }
+
+    .fa-xmark {
+        font-size: 1.9rem;
+    }
+
+    .content__add_edit_title {
+        font-weight: 600;
+        font-size: 1.35rem;
+        margin: 0;
+    }
+
     .content__add_edit_form {
         width: 85%;
-        margin-inline: auto;
+    }
+
+
+    .content__add_edit_form label,
+    .content__add_edit_form textarea {
+        padding: .4rem;
+        border-radius: 2px;
+        font-size: .95rem;
+    }
+
+    .error-message {
+        margin-block: .6rem -1.3rem;
+    }
+
+    .content__add_edit_form label,
+    .content__add_edit_form textarea,
+    .content__add_edit_form button {
+        margin-top: 1.5rem;
+    }
+
+    .content__add_edit_form input {
+        border: none;
+        background: none;
+        outline: none;
+        width: 100%;
+        color: var(--font-black);
+    }
+
+    .content__add_edit_form ::placeholder {
+        color: var(--font-black);
+    }
+
+    .content__add_edit_form textarea {
+        height: 9rem;
+        text-align: left;
+        outline: none;
+        color: var(--font-black);
+    }
+
+    .content__add_edit_form button {
+        padding: .5rem .7rem;
+        margin-inline: auto 0;
+        font-size: .9rem;
     }
 }
 
 @media only screen and (max-width: 576px) {
+
+    .content__add_edit {
+        padding: 1rem;
+        width: 85%;
+        top: 11rem;
+        flex-direction: column;
+        margin-inline: 1.2rem .5rem;
+        row-gap: 1rem;
+        border-radius: .5rem;
+    }
+
+    .fa-xmark {
+        font-size: 1.7rem;
+    }
+
+    .content__add_edit_title {
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin: 0;
+    }
+
     .content__add_edit_form {
-        width: 90%;
-        margin-inline: auto;
+        width: 80%;
+    }
+
+
+    .content__add_edit_form label,
+    .content__add_edit_form textarea {
+        padding: .3rem;
+        border-radius: 2px;
+        font-size: .9rem;
+    }
+
+    .error-message {
+        margin-block: .6rem -1.3rem;
+    }
+
+    .content__add_edit_form label,
+    .content__add_edit_form textarea,
+    .content__add_edit_form button {
+        margin-top: 1.5rem;
+    }
+
+    .content__add_edit_form input {
+        border: none;
+        background: none;
+        outline: none;
+        width: 100%;
+        color: var(--font-black);
+    }
+
+    .content__add_edit_form ::placeholder {
+        color: var(--font-black);
+    }
+
+    .content__add_edit_form textarea {
+        height: 9rem;
+        text-align: left;
+        outline: none;
+        color: var(--font-black);
+    }
+
+    .content__add_edit_form button {
+        padding: .3rem .5rem;
+        margin-inline: auto 0;
+        font-size: .8rem;
     }
 }

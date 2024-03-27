@@ -161,6 +161,7 @@ main {
     margin-right: 1rem;
     stroke: var(--font-black);
 }
+
 .content__header_action svg path {
     fill: var(--font-black);
 }
@@ -202,6 +203,7 @@ main {
     font-size: 1.2rem;
     font-weight: 600;
 }
+
 .content__status p {
     font-size: .85rem;
 }
@@ -227,6 +229,7 @@ main {
     padding: 1rem;
     border-radius: 5px;
 }
+
 .content__data path {
     fill: var(--font-black);
 }
@@ -569,9 +572,9 @@ main {
     .sidebar__navigation {
         background-color: #09353f;
         width: 100%;
-        height: 3rem;
+        height: 3.5rem;
         position: fixed;
-        top: calc(100vh - 3rem);
+        top: calc(100vh - 3.5rem);
         left: 0;
         flex-direction: row;
         align-items: center;
@@ -581,12 +584,12 @@ main {
 
     .sidebar__navigation .sidebar__link {
         flex-direction: column;
-        font-size: 0.75rem;
+        font-size: 0.85rem;
         justify-content: center;
     }
 
     .sidebar__navigation .sidebar__link svg {
-        width: 1.1rem;
+        width: 1.2rem;
     }
 
     .content {
@@ -599,7 +602,7 @@ main {
         position: fixed;
         top: 0;
         right: 0;
-        width: 50%;
+        width: 51%;
         padding-right: .5rem;
         background-color: var(--bg-color);
         height: 3.5rem;
@@ -611,6 +614,17 @@ main {
     .content__header_action svg {
         width: 1.4rem;
         height: 1.5rem;
+    }
+
+    .header__dark_light {
+        position: fixed;
+        top: 1.2rem;
+        text-align: center;
+        width: 100%;
+        z-index: 1000;
+    }
+    .header__dark_light i {
+        font-size: 1rem;
     }
 
     .content__header_notification svg {
