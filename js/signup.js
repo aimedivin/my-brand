@@ -44,7 +44,6 @@ signupEmail.addEventListener('input', () => {
 });
 signupPassword.addEventListener('input', () => {
     signupFormError = signupPassword.value.split(" ").join("").length < 8 ? true : false;
-    console.log(signupFormError);
 });
 
 
@@ -84,7 +83,6 @@ signupForm.addEventListener('input', (e) => {
 
 signupForm.addEventListener('submit', e => {
     e.preventDefault();
-    console.log(signupErrorField);
     if (signupErrorField.length) {
         signupForm.previousElementSibling.innerHTML = 'Please enter valid inputs';
         signupErrorField.forEach(el => {
@@ -95,7 +93,7 @@ signupForm.addEventListener('submit', e => {
         if ((signupPassword.value.split(" ").join("").length < 8) || !((/^[^\s@]+@[^\s@]+\.[^\s@]+$/).test(signupEmail.value)) || (signupFullName.value.split(" ").join("").length < 5)) {
             signupForm.previousElementSibling.innerHTML = 'Fill in all fields';
         } else {
-            signupForm.previousElementSibling.innerHTML = 'Registration was successful';
+            //signupForm.previousElementSibling.innerHTML = 'Registration was successful';
         }
     }
 });

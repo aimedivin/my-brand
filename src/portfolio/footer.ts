@@ -10,17 +10,17 @@ const subject = document.getElementById('subject') as HTMLInputElement;
 const messageConfirmation = document.querySelector('.message--confirmation') as HTMLElement;
 
 let footerFormError = false;
-let errorField: (HTMLInputElement| HTMLTextAreaElement)[] = [];
+let errorField: (HTMLInputElement | HTMLTextAreaElement)[] = [];
 let footerCount = 0;
 
 footerForm.addEventListener('input', (e) => {
-    let target = e.target! as HTMLInputElement|HTMLTextAreaElement;
+    let target = e.target! as HTMLInputElement | HTMLTextAreaElement;
     let targetNextSibling = target.nextElementSibling as HTMLElement;
 
     footerCount++;
-    
+
     footerForm.firstElementChild!.innerHTML = '';
-    
+
     errorField.forEach(el => {
         el.style.borderColor = 'black'
     });
@@ -52,7 +52,7 @@ footerForm.addEventListener('input', (e) => {
     if (footerFormError && !errorField.includes(target)) {
         errorField.push(target);
     }
-    
+
     if (!footerFormError && errorField.includes(target)) {
         errorField.splice(errorField.indexOf(target), 1);
     }
@@ -60,10 +60,11 @@ footerForm.addEventListener('input', (e) => {
 });
 
 
-footerForm.addEventListener('submit', (e) => {
+footerForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
     let formFirstChild = footerForm.firstElementChild as HTMLParagraphElement;
-    
+
     if (errorField.length > 0) {
         errorField.forEach(el => {
             console.log(el);
@@ -87,35 +88,46 @@ footerForm.addEventListener('submit', (e) => {
     }
 
     else {
-        let messages: Array<object>= JSON.parse(window.localStorage.getItem('messages')!);
-        let newMessage = {
-            email: email.value,
-            subject: subject.value,
-            text: message.value
-        }
 
-        if (!messages) {
-            localStorage.setItem('messages', JSON.stringify([newMessage]))
-        } else {
-            messages.push(newMessage)
-            localStorage.setItem('messages', JSON.stringify(messages));
-        }
+        try {
+            const response = await fetch(`${apiUrl}api/portfolio/message`,
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-type': 'application/json'
+                    },
+                    body: JSON.stringify(
+                        {
+                            email: email.value,
+                            subject: subject.value,
+                            description: message.value
+                        }
+                    )
+                })
+                
+            if (response.ok) {
+                email.value = '';
+                (email.nextElementSibling as HTMLSpanElement).style.display = 'none';
 
-        messageConfirmation.style.display = "flex";
-        
-        email.value = '';
-        (email.nextElementSibling as HTMLSpanElement).style.display = 'none';
+                subject.value = '';
+                (subject.nextElementSibling as HTMLSpanElement).style.display = 'none';
 
-        subject.value = '';
-        (subject.nextElementSibling as HTMLSpanElement).style.display = 'none';
+                message.value = '';
+                (message.nextElementSibling as HTMLSpanElement).style.display = 'none';
+                messageConfirmation.style.display = "flex";
+            } else {
+                messageConfirmation.firstElementChild!.innerHTML = `<h1>Updates</h1>
+                <i class="fa-solid fa-xmark"></i>
+                <span>Your message was not sent, Try again!</span>`;
+                messageConfirmation.style.display = "flex";
+            }
 
-        message.value = '';
-        (message.nextElementSibling as HTMLSpanElement).style.display = 'none';
+            setTimeout(() => {
+                messageConfirmation.style.display = "none";
+            }, 5500);
 
-        setTimeout(() => {
-            messageConfirmation.style.display = "none";
-        }, 2000);
+        } catch (error) {
+            console.log(error);
+        }        
     }
-
-    e.preventDefault();
 });
