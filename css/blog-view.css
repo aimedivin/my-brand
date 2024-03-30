@@ -90,15 +90,15 @@
 }
 .blog__view_title {
     text-transform: uppercase;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: 700;
-    margin-block: 1.1rem;
+    margin-block: 1.1rem .6rem;
     color: #00344d;
 }
 .blog__view_description {
     text-align: justify;
     letter-spacing: 0;
-    line-height: 1.5rem;
+    line-height: 1.3rem;
     font-weight: 450;
     font-size: .98rem;
 }
@@ -138,8 +138,8 @@
     align-items: center;
     margin-block: 1rem .6rem;
     width: 95%;
-    font-size: 1.3rem;
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 650;
 }
 
 .blog__view_comment_title svg {
@@ -163,12 +163,12 @@
 
 .blog__comment_username {
     font-weight: 550;
-    font-size: 1rem;
+    font-size: .9rem;
 }
 
 .blog__comment_description {
     line-height: 1rem;
-    font-size: .85rem;
+    font-size: .8rem;
     font-weight: 400;
     letter-spacing: -.03rem;
     text-align: justify;

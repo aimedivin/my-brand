@@ -31,25 +31,25 @@
 				<form action="" class="signup__form_fields">
 					<fieldset>
 						<legend>FullName</legend>
-						<input type="text" placeholder="Your FullName" id="signup-fullname" class="fullname">
+						<input type="text" placeholder="Your FullName" id="signup-fullname" class="fullname" name="fullname">
 						<span id="signup__error"></span>
 					</fieldset>
 					<fieldset>
 						<legend>Photo</legend>
-						<input type="file" id="signup-picture">
+						<input type="file" id="signup-picture" name="photo">
 					</fieldset>
 					<fieldset>
 						<legend>Dob</legend>
-						<input type="date" id="signup-date">
+						<input type="date" id="signup-date" name="dob">
 					</fieldset>
 					<fieldset>
 						<legend>Email</legend>
-						<input type="text" placeholder="Email" id="signup-email" class="email">
+						<input type="text" placeholder="Email" id="signup-email" class="email" name="email">
 						<span id="signup__error"><i class="fa-solid fa-circle-xmark"></i></span>
 					</fieldset>
 					<fieldset>
 						<legend>Password</legend>
-						<input type="password" placeholder="Password" id="signup-password" class="password">
+						<input type="password" placeholder="Password" id="signup-password" class="password" name="password">
 						<span id="signup__error"><i class="fa-solid fa-circle-xmark"></i></span>
 					</fieldset>
 					<button class="signup__btn signup__btn--signin">SignUp</button>
@@ -74,20 +74,21 @@
 			</article>
 			<article class="login__form">
 				<h1 class="login__title">SignIn</h1>
-				<form action="" class="login__form_fields">
+				<form action="" class="login__form_fields" method="post">
 					<p class="login__error"></p>
 					<label for="email">
-						<input type="text" placeholder="Email / Username" id="email">
+						<input type="text" placeholder="Email / Username" name="email" id="email">
 						<span id="login__error_icon"><i class="fa-solid fa-circle-xmark"></i></span>
 					</label>
 					<label for="password">
-						<input type="password" placeholder="Password" id="password">
+						<input type="password" placeholder="Password" name="password" id="password">
 						<span id="login__error_icon"><i class="fa-solid fa-circle-xmark"></i></span>
 					</label>
 					<button class="login__btn login__btn--signin">SignIn</button>
 				</form>
 				<p class="login__action">Forgot password ? <a href="">Click here</a></p>
-				<p class="login__action login-link">Create an account, <a href="/login-signup/signup.html">SignUp</a></p>
+				<p class="login__action login-link">Create an account, <a href="/login-signup/signup.html">SignUp</a>
+				</p>
 				<form action="" class="login__form_with">
 					<h1 class="login__title2">Or</h1>
 					<button class="login__btn login__btn--google">Signin with Google</button>
@@ -100,8 +101,6 @@
 	</section>
 	<section class="message message--confirmation">
 		<div class="message__container">
-			<h1>Updates</h1>
-			<span>Your message was sent</span><i class="fa-solid fa-check"></i>
 		</div>
 	</section>
 	<header class="header">
@@ -128,11 +127,8 @@
 				<a href="#blogs">Blogs</a>
 				<a href="#contact">Contact Me</a>
 			</div>
-			<div class="header__login_btn">
-				<a href="/login-signup/login.html">
-					Login
-					<img src="assets/icons/🦆 icon _account login_.svg" alt="">
-				</a>
+			<div class="header__profile_btn">
+				
 			</div>
 		</nav>
 	</header>
@@ -366,7 +362,7 @@
 			</div>
 			<div class="blogs__content">
 			</div>
-			
+
 			<div class="blogs__btn">
 				<a href="">Load More</a>
 			</div>
@@ -453,7 +449,7 @@
 			</article>
 			<article class="footer__message">
 				<p class="footer__title">Send Message</p>
-				<form action="" class="footer__form">
+				<form action="" class="footer__form" method="post">
 					<p class="footer__error"></p>
 					<label for="footer-email">
 						<input type="text" id="footer-email" placeholder="Your Email">
@@ -481,9 +477,13 @@
 			<p><i class="fa-regular fa-copyright"></i>&nbsp;Aime Divin IRAGENA 2023</p>
 		</section>
 	</footer>
-	<!-- <script src="js/login-signup.js"></script> -->
+	
+	<script src="dist/portfolio/signup.js"></script>
+	<script src="/dist/portfolio/main.js"></script>
 	<script src="/js/main.js"></script>
-	<script src="/dist/footer.js"></script>
+	<script src="/dist/portfolio/login-page.js"></script>
+	<script src="/dist/portfolio/footer.js"></script>
+	<script src="/dist/portfolio/blogs.js"></script>
 	<script src="/js/signup.js"></script>
 	<script src="/js/blog-view.js"></script>
 </body>

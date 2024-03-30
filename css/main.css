@@ -139,7 +139,7 @@ main {
     font-weight: 600;
 }
 
-.header__login_btn {
+.header__profile_btn {
     background-color: var(--btn-blue);
     padding: 0.4rem .8rem;
     text-align: center;
@@ -149,19 +149,19 @@ main {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     cursor: pointer;
 }
 
-.header__login_btn a {
+.header__profile_btn a {
     color: white;
     text-decoration: none;
     margin-left: 0;
 }
 
-.header__login_btn img {
+.header__profile_btn img {
     width: 1.5rem;
-    height: 1rem;
+    height: .9rem;
 }
 
 /*  Home */
@@ -775,7 +775,7 @@ input:-internal-autofill-selected {
         font-size: .95rem;
     }
 
-    .header__login_btn {
+    .header__profile_btn {
         padding: .3rem .5rem;
     }
 
@@ -940,13 +940,13 @@ input:-internal-autofill-selected {
         margin-top: 0.8rem;
     }
 
-    .header__navigation-mobile .header__login_btn {
+    .header__navigation-mobile .header__profile_btn {
         width: 13rem;
         justify-content: center;
         font-size: 1.3rem;
     }
 
-    .header__navigation-mobile .header__login_btn img {
+    .header__navigation-mobile .header__profile_btn img {
         width: 1.3rem;
         height: 1rem;
         vertical-align: middle;
@@ -1392,13 +1392,13 @@ input:-internal-autofill-selected {
         margin-top: 0.8rem;
     }
 
-    .header__navigation-mobile .header__login_btn {
+    .header__navigation-mobile .header__profile_btn {
         width: 13rem;
         justify-content: center;
         font-size: 1rem;
     }
 
-    .header__navigation-mobile .header__login_btn img {
+    .header__navigation-mobile .header__profile_btn img {
         width: 1.3rem;
         height: 1rem;
         vertical-align: middle;
