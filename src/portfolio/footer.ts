@@ -114,12 +114,18 @@ footerForm.addEventListener('submit', async (e) => {
 
                 message.value = '';
                 (message.nextElementSibling as HTMLSpanElement).style.display = 'none';
-                messageConfirmation.style.display = "flex";
+
+                
+                messageConfirmation.firstElementChild!.innerHTML = `
+                    <i class="fa-solid fa-check"></i>
+                    <span>Your message successfully sent!</span>`;
+                messageConfirmation.style.display = "block";
             } else {
-                messageConfirmation.firstElementChild!.innerHTML = `<h1>Updates</h1>
-                <i class="fa-solid fa-xmark"></i>
-                <span>Your message was not sent, Try again!</span>`;
-                messageConfirmation.style.display = "flex";
+                messageConfirmation.firstElementChild!.innerHTML = `
+                    <i class="fa-solid fa-xmark"></i>
+                    <span>Your message was not sent, Try again!</span>`;
+
+                messageConfirmation.style.display = "block";
             }
 
             setTimeout(() => {
@@ -127,7 +133,11 @@ footerForm.addEventListener('submit', async (e) => {
             }, 5500);
 
         } catch (error) {
-            console.log(error);
+            messageConfirmation.firstElementChild!.innerHTML = `
+                    <i class="fa-solid fa-xmark"></i>
+                    <span>Something went wrong, Try again!</span>`;
+
+            messageConfirmation.style.display = "block";
         }        
     }
 });

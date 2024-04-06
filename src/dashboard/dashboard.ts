@@ -1,56 +1,120 @@
-// Getting Page Title
+const statusUserValue = document.querySelector('.content__status_user_value') as HTMLParagraphElement;
+const statusBlogValue = document.querySelector('.content__status_blog_value') as HTMLParagraphElement;
+const statusMessageValue = document.querySelector('.content__status_message_value') as HTMLParagraphElement;
+
+
+const contentComment = document.querySelector('.content__comment') as HTMLElement;
+
+
+// Page Title
 const pageTitle = document.querySelector('title') as HTMLTitleElement;
 
+// User Status update
+async function userCount() {
+    const usersCountResponse = await fetch(`${apiUrl_D}api/dashboard/users`,
+        {
+            headers: {
+                "Authorization": `Bearer ${token}`
+            }
+        });
+
+    if (!usersCountResponse.ok) {
+        return;
+    }
+
+    const users = (await usersCountResponse.json()).users;
+
+    if (statusBlogValue && users.length) statusUserValue.innerText = users.length;
+}
 
 // Blog Status update
+async function blogCount() {
+    const blogsCountResponse = await fetch(`${apiUrl_D}api/dashboard/blogs`,
+        {
+            headers: {
+                "Authorization": `Bearer ${token}`
+            }
+        });
 
-const statusBlogValue = document.querySelector('.content__status_blog_value') as HTMLParagraphElement;
+    if (!blogsCountResponse.ok) {
+        return;
+    }
 
-const blogNumber = JSON.parse(window.localStorage.getItem('blogs')!);
-if (statusBlogValue && blogNumber.length) statusBlogValue.innerText = blogNumber.length;
+    const blogs = (await blogsCountResponse.json()).blogs;
+
+    if (statusBlogValue && blogs.length) {
+        statusBlogValue.innerText = blogs.length;
+    } else {
+        statusBlogValue.innerText = '0';
+    };
+}
+
 
 // Displaying Messages
 
-function displayMessage(){
+async function displayMessage() {
     const contentDataTable = document.querySelector('.content__data_table') as HTMLTableElement;
 
-    const dashMessage = JSON.parse(localStorage.getItem('messages')!)
+    const dashMessageResponse = await fetch(`${apiUrl_D}api/dashboard/messages`,
+        {
+            headers: {
+                "Authorization": `Bearer ${token}`
+            }
+        });
+    console.log('in');
+    if (!dashMessageResponse.ok) {
+        console.log('in');
+
+        return;
+    }
+
+    const dashMessage = (await dashMessageResponse.json()).msg;
+
+    dashMessage.reverse();
+
+    if (statusMessageValue) {
+        statusMessageValue.innerHTML = dashMessage.length
+    }
 
     const fragment = document.createDocumentFragment();
 
-
     for (let i = 0; i < dashMessage.length; i++) {
 
-        if (i == 5 && (pageTitle.innerText.toLowerCase() == 'dashboard') ) break;
+        if (i == 5 && (pageTitle.innerText.toLowerCase() == 'dashboard')) break;
 
         const tableRow = document.createElement('tr')
+
+        const col0 = document.createElement('td')
+        const date = new Date(dashMessage[i].createdAt)
+        const months = [
+            "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+        ];
+        col0.innerHTML = `<span class="calendar--icon material-symbols-outlined">calendar_month</span> ${date.getDate()}-${months[date.getMonth()]}-${date.getFullYear()}<br> ${date.getHours()}h:${date.getMinutes()}`;
+        col0.classList.add('content__data_date');
 
         const col1 = document.createElement('td')
         col1.textContent = dashMessage[i].email;
 
         const col2 = document.createElement('td')
-        col2.textContent = dashMessage[i].subject;
+        col2.textContent = dashMessage[i].subject.length > 15 ? ((dashMessage[i].subject as string).split('').slice(0, 15).join('') + '...') : dashMessage[i].subject;
 
         const col3 = document.createElement('td')
         const colForm = document.createElement('form')
         const colFormBtn = document.createElement('button');
-        const colFormDelBtn = document.createElement('button');
 
-        if (colFormDelBtn) {
-            colFormDelBtn.classList.add('content__data_dbtn');
-            colFormDelBtn.innerHTML = `<svg width="30" height="34" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M5.86491 33.6667C4.90657 33.6667 4.10658 33.3458 3.46491 32.7042C2.82185 32.0611 2.50033 31.2604 2.50033 30.3021V4.5H0.416992V2.41667H8.75033V0.8125H21.2503V2.41667H29.5837V4.5H27.5003V30.3021C27.5003 31.2604 27.1795 32.0604 26.5378 32.7021C25.8948 33.3451 25.0941 33.6667 24.1357 33.6667H5.86491ZM10.4337 27.4167H12.517V8.66667H10.4337V27.4167ZM17.4837 27.4167H19.567V8.66667H17.4837V27.4167Z"
-                                                    fill="#800202" fill-opacity="0.86" />
-                                            </svg>`;
-        }
+        // colFormBtn.addEventListener('click', () => {
+        //     window.location.href = ``
+        // })
+
         colForm.classList.add('content__data_form')
         colFormBtn.classList.add('content__data_btn');
         colFormBtn.textContent = 'Reply';
 
         colForm.appendChild(colFormBtn)
         if (pageTitle.innerText.toLowerCase() == 'message') {
-            colForm.appendChild(colFormDelBtn);
+            tableRow.appendChild(col0);
+            //colForm.appendChild(colFormDelBtn);
         }
         col3.appendChild(colForm);
 
@@ -63,4 +127,68 @@ function displayMessage(){
     contentDataTable.appendChild(fragment);
 }
 
+const displayComments = async () => {
+    let comments = ''
+    try {
+        const commentsResponse = await fetch(`${apiUrl_D}api/dashboard/comments`,
+            {
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            }
+        );
+
+        if (commentsResponse.ok) {
+            const commentsData = (await commentsResponse.json()).comments
+            console.log(commentsData);
+
+            for (let i = 0; i < commentsData.length && i < 4; i++) {
+                comments += `<div class="content__comment_profile">
+                                <figure>
+                                    <img src="${apiUrl_D}${commentsData[i].photo}" alt="">
+                                </figure>
+                                <div>
+                                    <h3>${commentsData[i].username}</h3>
+                                    <p>${commentsData[i].description}</p>
+                                </div>
+                            </div>`
+            }
+
+            if (comments.length) {
+
+                contentComment.innerHTML = comments
+            } else {
+                contentComment.innerHTML = 'No recent comments'
+            }
+        }
+    } catch (error) {
+
+    }
+}
+
+userCount()
+blogCount();
 displayMessage();
+displayComments();
+
+
+// LOGOUT AND REDIRECTING
+const logoutLink = document.querySelector('.logout--link')! as HTMLElement
+
+logoutLink.addEventListener('click', (e) => {
+    e.preventDefault()
+    localStorage.removeItem('token');
+    localStorage.removeItem('userId');
+    console.log(dashMessageConfirmation);
+
+    dashMessageConfirmation.firstElementChild!.innerHTML = `
+                        <i class="fa-solid fa-check"></i>
+                        <span>You have been successfully logged out.</span>`;
+
+    dashMessageConfirmation.style.display = 'block'
+    setTimeout(() => {
+        window.location.href = '/'
+    }, 3000);
+
+
+});

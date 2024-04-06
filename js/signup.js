@@ -13,8 +13,8 @@ const signupForm = document.querySelector('.signup__form_fields');
 
 const signupFullName = document.getElementById('signup-fullname');
 
-const signupPhoto = document.getElementById('signup-picture');
-const signupDate = document.getElementById('signup-date');
+const signupPhoto = document.getElementById('photo');
+const signupDate = document.getElementById('dob');
 const signupEmail = document.getElementById('signup-email');
 const signupPassword = document.getElementById('signup-password');
 let signupFormError = false;

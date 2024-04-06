@@ -25,8 +25,11 @@
     /* animation-name: fade-in; */
     /* animation-duration: .5s;  */
     background-color: rgba(30, 29, 29, 0.83);
+    overflow-y: scroll;
+    overflow-x: hidden;
     display: none;
 }
+
 /* Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae dolores consequatur nihil corporis. Corporis,
 sed? Dignissimos velit dolor nihil placeat praesentium et tenetur beatae vel. Iste voluptatum sapiente fugit vero? */
 
@@ -69,7 +72,7 @@ sed? Dignissimos velit dolor nihil placeat praesentium et tenetur beatae vel. Is
 }
 
 .signup__error_message {
-    color:#990000 ; 
+    color: #990000;
     font-style: italic;
     font-size: .75rem !important;
     letter-spacing: 0;
@@ -77,6 +80,7 @@ sed? Dignissimos velit dolor nihil placeat praesentium et tenetur beatae vel. Is
 
 .signup__form {
     flex-basis: 55%;
+    height: 100%;
     background-color: var(--font-white);
     display: flex;
     flex-direction: column;
@@ -85,8 +89,8 @@ sed? Dignissimos velit dolor nihil placeat praesentium et tenetur beatae vel. Is
     text-align: center;
     padding-block: 2rem;
     color: var(--font-black);
-    border-top-right-radius: 1.5rem;
-    border-bottom-right-radius: 1.5rem;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
 }
 
 .signup__form_fields fieldset {
@@ -96,6 +100,7 @@ sed? Dignissimos velit dolor nihil placeat praesentium et tenetur beatae vel. Is
     background-color: rgba(226, 226, 226, 0.275);
     position: relative;
 }
+
 #signup__error {
     position: absolute;
     top: -.1rem;
@@ -165,16 +170,51 @@ sed? Dignissimos velit dolor nihil placeat praesentium et tenetur beatae vel. Is
 
 
 /* ---------------- */
+@media only screen and (max-width: 1200px) {
+    .signup {
+        padding: 7rem 7rem;
+    }
+}
+
 @media only screen and (max-width: 992px) {
     .signup {
-        width: 43rem;
+        padding: 7rem 2rem;
+    }
+
+    .signup__message p:nth-child(1) {
+        font-size: 1.3rem;
+        margin-bottom: -1rem;
+
+    }
+
+    .signup__message p:nth-child(2) {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
+
+    .signup__message p:nth-child(3) {
+        font-size: .9rem;
+    }
+
+    .signup__title {
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
     }
 }
 
 @media only screen and (max-width: 768px) {
     .signup {
         width: 100%;
-        background-color: transparent;
+    }
+
+    .signup__title {
+        font-size: 1.3rem;
+    }
+
+    .signup__title2 {
+        font-size: 1rem;
     }
 
     .signup__message {
@@ -182,16 +222,22 @@ sed? Dignissimos velit dolor nihil placeat praesentium et tenetur beatae vel. Is
     }
 
     .signup__form {
-        flex-basis: 80%;
+        flex-basis: 100%;
         height: 100%;
         padding-block: 2rem;
+        border-radius: .7rem;
     }
+        .signup__form_fields legend {
+            font-size: .85rem;
+        }
+                .signup__form_fields input {
+                    font-size: .7rem;
+                }
 }
 
 @media only screen and (max-width: 576px) {
     .signup {
         width: 100%;
-        background-color: transparent;
     }
 
     .signup__title {
@@ -200,7 +246,6 @@ sed? Dignissimos velit dolor nihil placeat praesentium et tenetur beatae vel. Is
     }
 
     .signup__form {
-        flex-basis: 80%;
         height: 100%;
         padding-block: 2rem;
     }
@@ -209,10 +254,6 @@ sed? Dignissimos velit dolor nihil placeat praesentium et tenetur beatae vel. Is
 /* Mobile style */
 
 @media only screen and (max-width: 480px) {
-    .signup {
-        width: 90%;
-    }
-
     .signup__message {
         display: none;
     }
@@ -222,11 +263,6 @@ sed? Dignissimos velit dolor nihil placeat praesentium et tenetur beatae vel. Is
         font-size: 1.3rem;
     }
 
-    .signup__form {
-        flex-basis: 100%;
-        height: 100%;
-        padding-block: 2rem;
-    }
 
     .fullname,
     .email,

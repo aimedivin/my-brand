@@ -19,7 +19,6 @@
 .content__blog {
     display: flex;
     column-gap: 1.5rem;
-    align-items: center;
 }
 
 .content__blog_thumbnail {
