@@ -1,7 +1,3 @@
-// const apiUrl_D = "http://localhost:3000/";
-
-// const token = localStorage.getItem('token');
-// const userId = localStorage.getItem('userId');
 
 window.addEventListener('load', async () => {
     const headerProfile = document.querySelector('.header__profile') as HTMLElement;

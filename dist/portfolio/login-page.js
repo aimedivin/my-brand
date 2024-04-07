@@ -30,9 +30,12 @@ signInForm.addEventListener('submit', (event) => __awaiter(void 0, void 0, void 
         });
         if (response.ok) {
             const userData = yield response.json();
+            const expirationTime = Date.now() + (60 * 60 * 1000);
             signInForm.reset();
             localStorage.setItem('token', userData.token);
             localStorage.setItem('userId', userData.userId);
+            localStorage.setItem('refreshToken', userData.refreshToken);
+            localStorage.setItem('expirationTime', expirationTime.toString());
             const token = localStorage.getItem('token');
             const adminCheck = yield fetch(`${apiUrl}api/auth/user/${userData.userId}`, {
                 headers: {

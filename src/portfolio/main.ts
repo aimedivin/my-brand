@@ -20,14 +20,14 @@ const userCheck = async () => {
                     'Authorization': `Bearer ${token}`
                 }
             });
-
+            
             if (userProfileResponse.ok) {
                 const userProfileData: userType = (await userProfileResponse.json()).user;
 
                 headerProfile.innerHTML = `
-            <figure class="profile__image">
-            <img src="${apiUrl}${userProfileData.photo}" alt="">
-            </figure>`;
+                <figure class="profile__image">
+                <img src="${apiUrl}${userProfileData.photo}" alt="">
+                </figure>`;
 
                 userAction.innerHTML = `
                 <div class="user__action_container">
@@ -55,6 +55,7 @@ const userCheck = async () => {
                 const userProfile = document.querySelector('.user--profile') as HTMLElement;
 
                 const userActionCloseBtn = document.querySelector('.user__action--close-btn')! as HTMLElement;
+                
                 const profileImage = document.querySelector('.profile__image')! as HTMLElement;
                 const userLogoutBtn = document.querySelector('.user--logout-btn')! as HTMLElement;
                 if (userDashboard) {
@@ -76,32 +77,32 @@ const userCheck = async () => {
                     hamburgerMenuBtn.style.display = 'none';
 
                     userInfo.innerHTML = `<div class="user__info_container">
-			<div class="user__info_close_btn">
-				<i class="fa-solid fa-xmark"></i>
-			</div>
-			<h1>User Info <i class="fa-solid fa-pen-to-square"></i></h1>
-			<form action="" class="user__info_form" method="post" enctype="multipart/form-data">
-				<label for="photo">
-					<span>Photo:</span>
-					<div class="user--photo">
-						<input type="file" id="photo">
-					</div>
-				</label>
-				<label for="name">
-					<span>Name:</span>
-					<input type="text" id="name" readonly>
-				</label>
-				<label for="dob">
-					<span>Dob:</span>
-					<input type="text" id="dob" readonly>
-				</label>
-				<label for="email">
-					<span>Email:</span>
-					<input type="text" id="email" readonly>
-				</label>
-				<button type="submit" class="update-btn">Update User</button>
-			</form>
-		</div>`
+                        <div class="user__info_close_btn">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                        <h1>User Info <i class="fa-solid fa-pen-to-square"></i></h1>
+                        <form action="" class="user__info_form" method="post" enctype="multipart/form-data">
+                            <label for="photo">
+                                <span>Photo:</span>
+                                <div class="user--photo">
+                                    <input type="file" id="photo">
+                                </div>
+                            </label>
+                            <label for="name">
+                                <span>Name:</span>
+                                <input type="text" id="name" readonly>
+                            </label>
+                            <label for="dob">
+                                <span>Dob:</span>
+                                <input type="text" id="dob" readonly>
+                            </label>
+                            <label for="email">
+                                <span>Email:</span>
+                                <input type="text" id="email" readonly>
+                            </label>
+                            <button type="submit" class="update-btn">Update User</button>
+                        </form>
+                    </div>`
 
                     const userId = localStorage.getItem('userId')
                     const token = localStorage.getItem('token')
@@ -259,6 +260,8 @@ const userCheck = async () => {
                 userLogoutBtn.addEventListener('click', () => {
                     localStorage.removeItem('token');
                     localStorage.removeItem('userId');
+                    localStorage.removeItem('refreshToken');
+                    localStorage.removeItem('expirationTime');
 
                     messageConfirmation.firstElementChild!.innerHTML = `
                         <i class="fa-solid fa-check"></i>
@@ -278,13 +281,16 @@ const userCheck = async () => {
 
                     userCheck();
                 });
-            } else {
-                throw new Error('Something went wrong');
+            }
+            else {
+                throw new Error('Something went wrongq');
             }
         } catch (error) {
+            console.log(error);
+            
             messageConfirmation.firstElementChild!.innerHTML = `
                 <i class="fa-solid fa-xmark"></i>
-                <span>Something went wrong!</span>`;
+                <span>Something went wrongk!</span>`;
             messageConfirmation.style.display = "block";
 
             setTimeout(() => {

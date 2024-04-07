@@ -1,4 +1,4 @@
-const apiUrl_D = "http://localhost:3000/";
+const apiUrl_D = "https://my-brand-aimedivin-backend.onrender.com/";
 
 const token = localStorage.getItem('token');
 const userId = localStorage.getItem('userId');

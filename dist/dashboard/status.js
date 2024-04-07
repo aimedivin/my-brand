@@ -1,5 +1,4 @@
 "use strict";
-// const apiUrl_D = "http://localhost:3000/";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -9,8 +8,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-// const token = localStorage.getItem('token');
-// const userId = localStorage.getItem('userId');
 window.addEventListener('load', () => __awaiter(void 0, void 0, void 0, function* () {
     const headerProfile = document.querySelector('.header__profile');
     try {

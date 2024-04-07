@@ -1,4 +1,4 @@
-const apiUrl = "http://localhost:3000/";
+const apiUrl = "https://my-brand-aimedivin-backend.onrender.com/";
 
 let container = '';
 

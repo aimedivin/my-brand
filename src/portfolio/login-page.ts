@@ -29,10 +29,13 @@ signInForm.addEventListener('submit', async (event) => {
         if (response.ok) {
 
             const userData = await response.json();
+            const expirationTime = Date.now() + (60 * 60 * 1000);
 
             signInForm.reset()
             localStorage.setItem('token', userData.token);
             localStorage.setItem('userId', userData.userId);
+            localStorage.setItem('refreshToken', userData.refreshToken);
+            localStorage.setItem('expirationTime', expirationTime.toString());
 
             const token = localStorage.getItem('token');
 
@@ -52,7 +55,7 @@ signInForm.addEventListener('submit', async (event) => {
                 <i class="fa-solid fa-check"></i>
                 <span>LogIn was successful !</span>`;
             messageConfirmation.style.display = "block";
-            
+
             if (adminCheck.ok) {
                 const adminCheckData = await adminCheck.json()
                 if (adminCheckData.user.isAdmin)

@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-const apiUrl = "http://localhost:3000/";
+const apiUrl = "https://my-brand-aimedivin-backend.onrender.com/";
 let container = '';
 const blogsBtn = document.querySelector('.blogs__btn');
 const blogsContent = document.querySelector('.blogs__content');
