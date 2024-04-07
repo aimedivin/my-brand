@@ -8,14 +8,26 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 		integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/login.css">
 	<link rel="stylesheet" href="css/signup.css">
 	<link rel="stylesheet" href="css/blog-view.css">
 	<link rel="stylesheet" href="css/message-confirmation.css">
+	<link rel="stylesheet" href="css/user-action.css">
+	<link rel="stylesheet" href="css/user-info.css">
+
+	<script src="dist/token-refresher.js"></script>
 </head>
 
 <body>
+	<section class="user__info">
+		
+	</section>
+	<section class="user__action">
+<form action="" mult></form>
+	</section>
 	<section class="signup signup--hide-show">
 		<div class="signup--container">
 			<p class="signup--close-btn"><i class="fa-solid fa-xmark"></i></p>
@@ -31,16 +43,17 @@
 				<form action="" class="signup__form_fields">
 					<fieldset>
 						<legend>FullName</legend>
-						<input type="text" placeholder="Your FullName" id="signup-fullname" class="fullname" name="fullname">
+						<input type="text" placeholder="Your FullName" id="signup-fullname" class="name"
+							name="name">
 						<span id="signup__error"></span>
 					</fieldset>
 					<fieldset>
 						<legend>Photo</legend>
-						<input type="file" id="signup-picture" name="photo">
+						<input type="file" id="photo" name="photo">
 					</fieldset>
 					<fieldset>
 						<legend>Dob</legend>
-						<input type="date" id="signup-date" name="dob">
+						<input type="date" id="dob" name="dob">
 					</fieldset>
 					<fieldset>
 						<legend>Email</legend>
@@ -49,17 +62,14 @@
 					</fieldset>
 					<fieldset>
 						<legend>Password</legend>
-						<input type="password" placeholder="Password" id="signup-password" class="password" name="password">
+						<input type="password" placeholder="Password" id="signup-password" class="password"
+							name="password">
 						<span id="signup__error"><i class="fa-solid fa-circle-xmark"></i></span>
 					</fieldset>
 					<button class="signup__btn signup__btn--signin">SignUp</button>
 				</form>
 				<p class="signup-link">Already have an account, <a href="">SignIn</a></p>
-				<form action="" class="signup__form_with">
-					<h1 class="signup__title2">Or</h1>
-					<button class="signup__btn signup__btn--google">SignUp with Google</button>
-					<button class="signup__btn signup__btn--apple">SignUp With Apple</button>
-				</form>
+				
 			</article>
 		</div>
 	</section>
@@ -69,7 +79,7 @@
 			<article class="login__message">
 				<p>Hello,</p>
 				<p>Welcome Back!</p>
-				<p>Please enter your credentials to continues accessing your account</p>
+				<p>Please enter your credentials to continue accessing your account</p>
 				<p>We're excited to have you here again.</p>
 			</article>
 			<article class="login__form">
@@ -127,8 +137,8 @@
 				<a href="#blogs">Blogs</a>
 				<a href="#contact">Contact Me</a>
 			</div>
-			<div class="header__profile_btn">
-				
+			<div class="header__profile">
+
 			</div>
 		</nav>
 	</header>
@@ -151,7 +161,7 @@
 						love for technology.</p>
 				</div>
 				<div class="home__cta_btn">
-					<a href="" class="home__btn_download">Download CV</a>
+					<a href="https://drive.google.com/file/d/1meVjuIBbY0PDD2iEChq7fAK_UfgOSdCk/view?usp=sharing" target="_blank" class="home__btn_download">Download CV</a>
 					<a href="#footer" class="home__btn_send_message">Send Message</a>
 				</div>
 			</article>
@@ -161,17 +171,17 @@
 				</figure>
 				<div class="home__social_media">
 					<figure class="linkedin">
-						<a href="">
+						<a href="https://linkedin.com/in/aime-divin-iragena-751192148" target="_blank">
 							<img src="assets/icons/Linkedin.png" alt="linkedin">
 						</a>
 					</figure>
 					<figure class="github">
-						<a href="">
+						<a href="https://github.com/aimedivin" target="_blank">
 							<img src="assets/icons/Github.png" alt="github">
 						</a>
 					</figure>
 					<figure class="twitter">
-						<a href="">
+						<a href="#">
 							<img src="assets/icons/twitter.png" alt="twitter">
 						</a>
 					</figure>
@@ -350,9 +360,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="portfolio__btn">
+			<!-- <div class="portfolio__btn">
 				<a href="">Load More</a>
-			</div>
+			</div> -->
 		</section>
 		<span id="blogs"></span>
 		<section class="blogs">
@@ -391,7 +401,8 @@
 						Email: <br>
 						aimedifi003@gmail.com
 					</p>
-					<a href="" class="contact__link">Send Email</a>
+					<a href="mailto:"></a>
+					<a href="mailto:aimedifi003@gmail.com" target="_blank" class="contact__link">Send Email</a>
 				</div>
 				<div class="contact__web">
 					<figure>
@@ -400,7 +411,7 @@
 					<p class="contact__address_desc">
 						Website: <br>www.aimedivin.com
 					</p>
-					<a href="" class="contact__link">Visit</a>
+					<a href="#" class="contact__link">Visit</a>
 				</div>
 				<div class="contact__Tel">
 					<figure>
@@ -410,7 +421,7 @@
 						Phone: <br>
 						+250 790776174
 					</p>
-					<a href="" class="contact__link">Call</a>
+					<a href="tel:+250790776174" target="_blank" class="contact__link">Call</a>
 				</div>
 			</div>
 		</section>

@@ -1,26 +1,40 @@
 const contentMain = document.querySelector(".content__main")!;
 
 type storedBlog = {
-    title: string,
-    photo: string,
-    description: string
+    _id: string;
+    title: string;
+    imageUrl: string;
+    description: string;
 }
 
-const allBlogs = () => {
-    const blogs: storedBlog[] = JSON.parse(window.localStorage.getItem('blogs')!);
+const allBlogs = async () => {
+    // const blogs: storedBlog[] = JSON.parse(window.localStorage.getItem('blogs')!);
     let container = '';
+    const blogsResponse = await fetch(`${apiUrl_D}api/dashboard/blogs`,
+        {
+            headers: {
+                "Authorization": `Bearer ${token}`
+            }
+        });
+
+    if (!blogsResponse.ok) {
+        return;
+    }
+
+    const blogs: storedBlog[] = (await blogsResponse.json()).blogs;
+    blogs.reverse()
     if (blogs) {
-        blogs.forEach((element, index: number) => {
+        blogs.forEach(element => {
             container += `<div class="content__blog">
                     <div class="content__blog_thumbnail">
-                        <img src="${element.photo}" alt="">
+                        <img src="${apiUrl_D}${element.imageUrl}" alt="${element.title}_photo">
                     </div>
                     <div class="content__blog_info">
                         <h1>${element.title}</h1>
-                        <h2>${element.description.slice(0,170)} ...</h2>
+                        <h2>${element.description.slice(0, 170)} ...</h2>
                         <p></p>
                         <form action="" class="content__blog_cta_btn">
-                            <input type="hidden" name="" value="${index}">
+                            <input type="hidden" name="" value="${element._id}">
                             <a href="/dashboard/add-edit-blog.html" class="btn-edit">Edit</a>
                             <a href="/dashboard/add-edit-blog.html" class="btn-delete">Delete</a>
                         </form>
@@ -48,7 +62,7 @@ const editAddForm = document.querySelector('.content__add_edit_form')! as HTMLFo
 const contentMainBlogs = document.querySelector('.content__main')!;
 
 const errorMessage = document.getElementsByClassName('error-message')!;
-    ;
+;
 const title = document.getElementById('title')! as HTMLInputElement;
 const photo = document.getElementById('photo')! as HTMLInputElement;
 const description = document.getElementById('description')! as HTMLTextAreaElement;
@@ -67,68 +81,99 @@ closeBtn.addEventListener('click', () => {
     contentAddEdit.style.display = 'none'
 });
 
+let blogId: string;
+let editBlogImageUrl: string;
 
-if (photo) {
-    photo.addEventListener('change', function () {
-        const reader = new FileReader();
-        reader.addEventListener('load', () => {
-            photoDataUrl = (reader.result as string);
-        })
-        if (this.files) {
-            reader.readAsDataURL(this.files[0]);
-        }
-
-
-        if (localStorage.getItem('mode') != "edit" && photo.files) {
-            if (!photo.files[0] || photo.files[0].type.slice(0, 5) != 'image') {
-                errorFieldsForms.push(photo);
-            }
-        } 
-    });
-}
-
-
-contentMainBlogs.addEventListener('click', (e: Event) => {
+contentMainBlogs.addEventListener('click', async (e: Event) => {
 
     e.preventDefault();
 
     let target = e.target! as HTMLElement;
 
+    blogId = (target.previousElementSibling as HTMLInputElement).value;
+
+
     Array.from(errorMessage).forEach(element => {
-        (element as HTMLElement).style.display ="none";
+        (element as HTMLElement).style.display = "none";
     });
 
+
     if (target.classList.value == 'btn-edit') {
-        
+
+        // Previous Form data reset
+        editAddForm.reset();
+
         contentAddEdit.style.display = 'flex';
-        localStorage.setItem('mode', 'edit');
-        localStorage.setItem("updateIndex", (target.previousElementSibling as HTMLInputElement).value);
+        // localStorage.setItem('mode', 'edit');
+
         contentAddEditTitle!.innerHTML = 'Edit Blog';
 
-        // Prepopulating Data and Editing Blog
-
-        (editAddForm.lastElementChild as HTMLElement).innerText = "Update Blog"
-        let blogs = JSON.parse(localStorage.getItem('blogs')!);
-        let blogIndex = JSON.parse(localStorage.getItem('updateIndex')!);
-        console.log(blogIndex);
+        (editAddForm.lastElementChild as HTMLElement).innerText = "Update Blog";
+        (editAddForm.lastElementChild as HTMLElement).classList.remove('post-blog');
+        (editAddForm.lastElementChild as HTMLElement).classList.add("update-blog");
         (photo.previousElementSibling! as HTMLElement).innerText = 'Update Photo';
-        editAddForm.reset();
-        photoDataUrl = blogs[blogIndex].photo;
-        description.value = blogs[blogIndex].description;
-        title.value = blogs[blogIndex].title;
+
+        // Pre-populating Data and Editing Blog
+        const blogResponse = await fetch(`${apiUrl_D}api/dashboard/blog/${blogId}`,
+            {
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            });
+
+        if (!blogResponse.ok) {
+            return;
+        }
+
+        const blog: storedBlog = (await blogResponse.json()).blog;
+
+        editBlogImageUrl = blog.imageUrl;
+        description.value = blog.description;
+        title.value = blog.title;
     }
 
     // Deleting a blog
     if (target.classList.value == 'btn-delete') {
-        let blogIndex = (target.parentElement!.firstElementChild as HTMLInputElement).value;
-        // console.log(blogIndex);
-        let blogs = JSON.parse(localStorage.getItem('blogs')!);
+        const blogId = (target.previousElementSibling!.previousElementSibling as HTMLInputElement).value;
 
-        if (blogs[blogIndex]) {
-            blogs.splice(Number(blogIndex), 1);
-            localStorage.setItem("blogs", `${JSON.stringify(blogs)}`);
+        try {
+
+            const blogResponse = await fetch(`${apiUrl_D}api/dashboard/blog/${blogId}`,
+                {
+                    method: 'DELETE',
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    }
+                });
+
+            if (blogResponse.ok) {
+                dashMessageConfirmation.firstElementChild!.innerHTML = `
+                <i class="fa-solid fa-check"></i>
+                <span>Blog was successfully deleted!</span>`;
+                dashMessageConfirmation.style.display = "block";
+            } else {
+                dashMessageConfirmation.firstElementChild!.innerHTML = `
+                <i class="fa-solid fa-xmark"></i>
+                <span>Something went wrong, Try again!</span>`;
+                dashMessageConfirmation.style.display = "block";
+            }
+            allBlogs()
+            setTimeout(() => {
+                dashMessageConfirmation.style.display = "none";
+            }, 3000);
+
+        } catch (error) {
+            dashMessageConfirmation.firstElementChild!.innerHTML = `<i class="fa-solid fa-xmark"></i>
+            <span>Something went wrong, Try again!</span>`;
+            dashMessageConfirmation.style.display = "block";
+
             allBlogs();
+
+            setTimeout(() => {
+                dashMessageConfirmation.style.display = "none";
+            }, 3000);
         }
+
     }
 });
 
@@ -141,17 +186,19 @@ addBlogBtn.addEventListener('click', (e) => {
         (el as HTMLElement).style.display = "none";
     });
 
-    localStorage.setItem('mode', 'newblog');
     contentAddEdit.style.display = 'flex';
     contentAddEditTitle.innerHTML = 'Add new Blog';
+
     (editAddForm.lastElementChild as HTMLElement).innerText = "Post Blog";
+    (editAddForm.lastElementChild as HTMLElement).classList.remove("update-blog");
+    (editAddForm.lastElementChild as HTMLElement).classList.add("post-blog");
     (photo.previousElementSibling as HTMLElement).innerText = 'Blog Photo'
 
     editAddForm.reset();
     photoDataUrl = '';
 });
 
-// Inputing, reset errorFieldsForms array
+// Inputting, reset errorFieldsForms array
 title.addEventListener('input', () => {
     errorFieldsForms = [];
     Array.from(errorMessage).forEach(el => {
@@ -168,23 +215,22 @@ photo.addEventListener('change', () => {
 
 description.addEventListener('input', () => {
     errorFieldsForms = [];
-    
+
     Array.from(errorMessage).forEach(el => {
         (el as HTMLElement).style.display = "none";
     });
 });
 
 // Submit Event for the Add new blog form
-editAddForm.addEventListener('submit', e => {
+editAddForm.addEventListener('submit', async (e) => {
 
-    // console.log(photo.files[0].name);
     let blogs = JSON.parse(localStorage.getItem('blogs')!);
     let blogIndex = JSON.parse(localStorage.getItem('updateIndex')!);
     e.preventDefault();
 
     // Form Validation
     // console.log(photo.files[0]);
-    
+
     if (title.value.split(' ').join('').length < 4) {
         errorFieldsForms.push(title)
     }
@@ -210,7 +256,7 @@ editAddForm.addEventListener('submit', e => {
                     parentPreviousSibling.innerText = "Enter valid Image";
                     parentPreviousSibling.style.display = "block";
                 }
-                
+
             }
             if (el.id == 'description') {
                 childrenPreviousSibling.innerText = "Enter valid description | *min = 100 characters";
@@ -218,28 +264,131 @@ editAddForm.addEventListener('submit', e => {
             }
         })
     } else {
-        if (localStorage.getItem('mode') == "newblog") {
-            const newBlog = { title: title.value, photo: photoDataUrl, description: description.value };
-            if (blogs.length) {
-                blogs.push(newBlog);
-                localStorage.setItem("blogs", `${JSON.stringify(blogs)}`);
+        console.log((e.target as HTMLElement).lastElementChild!.classList[0]);
+
+        if ((e.target as HTMLElement).lastElementChild!.classList[0] == "post-blog") {
+            const formData = new FormData();
+            formData.append('title', title.value);
+            formData.append('imageUrl', photo.files![0]);
+            formData.append('description', description.value);
+
+            try {
+                const blogPostResponse = await fetch(`${apiUrl_D}api/dashboard/blog`,
+                    {
+                        method: 'POST',
+                        headers: {
+                            "Authorization": `Bearer ${token}`
+                        },
+                        body: formData
+                    });
+
+                if (blogPostResponse.ok) {
+                    dashMessageConfirmation.firstElementChild!.innerHTML = `
+                        <i class="fa-solid fa-check"></i>
+                        <span>The blog was successfully posted!</span>`;
+                    dashMessageConfirmation.style.display = "block";
+                    contentAddEdit.style.display = 'none';
+                    allBlogs();
+                } 
+                else if (blogPostResponse.status == 409) {
+                    dashMessageConfirmation.firstElementChild!.innerHTML = `
+                        <i class="fa-solid fa-xmark"></i>
+                        <span>The blog with this data exists. Try again!</span>`;
+                    dashMessageConfirmation.style.display = "block";
+                }
+                else if (blogPostResponse.status == 415) {
+                    if ((await blogPostResponse.json()).message == 'No image provided.') {
+                        dashMessageConfirmation.firstElementChild!.innerHTML = `
+                            <i class="fa-solid fa-xmark"></i>
+                            <span>Unsupported image type, Try again!</span>`;
+                        dashMessageConfirmation.style.display = "block";
+                    }
+                }
+                else {
+                    dashMessageConfirmation.firstElementChild!.innerHTML = `
+                        <i class="fa-solid fa-xmark"></i>
+                        <span>Something went wrong, Try again!</span>`;
+                    dashMessageConfirmation.style.display = "block";
+                }
+
+                setTimeout(() => {
+                    dashMessageConfirmation.style.display = "none";
+                }, 3000);
+            } catch (error) {
+                console.log(error);
+
+                dashMessageConfirmation.firstElementChild!.innerHTML = `<i class="fa-solid fa-xmark"></i>
+                <span>Something went wrong, Try again!</span>`;
+                dashMessageConfirmation.style.display = "block";
+
+                allBlogs();
+
+                setTimeout(() => {
+                    dashMessageConfirmation.style.display = "none";
+                }, 3000);
             }
-            else {
-                localStorage.setItem("blogs", `[${JSON.stringify(newBlog)}]`);
-            }
-            contentAddEdit.style.display = 'none';
-            allBlogs();
         }
 
         // Editing Existing Blog
-        if (localStorage.getItem('mode') == "edit") {
-            const newBlog = { title: title.value, photo: photoDataUrl, description: description.value };
-            if (blogs) {
-                blogs[blogIndex] = newBlog;
-                localStorage.setItem("blogs", `${JSON.stringify(blogs)}`);
+        if ((e.target as HTMLElement).lastElementChild!.classList[0] == "update-blog") {
+            const formData = new FormData();
+            formData.append('title', title.value);
+            formData.append('description', description.value);
+
+            if (photo.files![0]) {
+                formData.append('imageUrl', photo.files![0]);
+            } else {
+                formData.append('newImageUrl', editBlogImageUrl);
             }
-            allBlogs();
-            contentAddEdit.style.display = 'none'
+
+            try {
+                const blogPostResponse = await fetch(`${apiUrl_D}api/dashboard/blog/${blogId}`,
+                    {
+                        method: 'PUT',
+                        headers: {
+                            "Authorization": `Bearer ${token}`
+                        },
+                        body: formData
+                    });
+                console.log(blogPostResponse.status);
+                    
+                if (blogPostResponse.ok) {
+                    dashMessageConfirmation.firstElementChild!.innerHTML = `
+                        <i class="fa-solid fa-check"></i>
+                        <span>The blog was successfully updated!</span>`;
+                    dashMessageConfirmation.style.display = "block";
+                    contentAddEdit.style.display = 'none';
+                    allBlogs();
+                } 
+                else if (blogPostResponse.status == 415) {
+                    dashMessageConfirmation.firstElementChild!.innerHTML = `
+                        <i class="fa-solid fa-xmark"></i>
+                        <span>Unsupported Media Type, Try again!</span>`;
+                    dashMessageConfirmation.style.display = "block";
+                }
+                else {
+                    dashMessageConfirmation.firstElementChild!.innerHTML = `
+                        <i class="fa-solid fa-xmark"></i>
+                        <span>Something went wrong, Try again!</span>`;
+                    dashMessageConfirmation.style.display = "block";
+                }
+
+                setTimeout(() => {
+                    dashMessageConfirmation.style.display = "none";
+                }, 3000);
+            } catch (error) {
+                console.log(error);
+
+                dashMessageConfirmation.firstElementChild!.innerHTML = `<i class="fa-solid fa-xmark"></i>
+                <span>Something went wrong, Try again!</span>`;
+                dashMessageConfirmation.style.display = "block";
+
+                allBlogs();
+
+                setTimeout(() => {
+                    dashMessageConfirmation.style.display = "none";
+                }, 3000);
+            }
         }
     }
 });

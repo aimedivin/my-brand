@@ -9,8 +9,10 @@ signUpForm.addEventListener('submit', async (e) => {
 
     // Retrieve Form data
     const name = formData.get('fullname');
-    const photo = "Photo";
-    const dob = "dob";
+    const photo = formData.get('photo');;
+    const dob = formData.get('dob');
+    console.log(typeof dob);
+    
     const email = formData.get('email');
     const password = formData.get('password');
 
@@ -18,12 +20,7 @@ signUpForm.addEventListener('submit', async (e) => {
         const response = await fetch(`${apiUrl}api/auth/signup`,
             {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    name, email, photo, dob, password
-                })
+                body: formData
             });
 
         if (response.ok) {
@@ -48,10 +45,13 @@ signUpForm.addEventListener('submit', async (e) => {
                 <span>Registration failed!, Try again!</span>`;
             messageConfirmation.style.display = "block";
         }
+        console.log(await response.json());
+        
         setTimeout(() => {
             messageConfirmation.style.display = "none";
         }, 3000);
     } catch (error) {
-
+        console.log(error);
+        
     }
 })

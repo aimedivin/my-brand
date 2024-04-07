@@ -107,20 +107,26 @@ footerForm.addEventListener('submit', (e) => __awaiter(void 0, void 0, void 0, f
                 subject.nextElementSibling.style.display = 'none';
                 message.value = '';
                 message.nextElementSibling.style.display = 'none';
-                messageConfirmation.style.display = "flex";
+                messageConfirmation.firstElementChild.innerHTML = `
+                    <i class="fa-solid fa-check"></i>
+                    <span>Your message successfully sent!</span>`;
+                messageConfirmation.style.display = "block";
             }
             else {
-                messageConfirmation.firstElementChild.innerHTML = `<h1>Updates</h1>
-                <i class="fa-solid fa-xmark"></i>
-                <span>Your message was not sent, Try again!</span>`;
-                messageConfirmation.style.display = "flex";
+                messageConfirmation.firstElementChild.innerHTML = `
+                    <i class="fa-solid fa-xmark"></i>
+                    <span>Your message was not sent, Try again!</span>`;
+                messageConfirmation.style.display = "block";
             }
             setTimeout(() => {
                 messageConfirmation.style.display = "none";
             }, 5500);
         }
         catch (error) {
-            console.log(error);
+            messageConfirmation.firstElementChild.innerHTML = `
+                    <i class="fa-solid fa-xmark"></i>
+                    <span>Something went wrong, Try again!</span>`;
+            messageConfirmation.style.display = "block";
         }
     }
 }));

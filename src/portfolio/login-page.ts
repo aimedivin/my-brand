@@ -24,27 +24,43 @@ signInForm.addEventListener('submit', async (event) => {
                     email, password
                 })
             })
-        const userData = await response.json();
-        
+
+
         if (response.ok) {
+
+            const userData = await response.json();
+            const expirationTime = Date.now() + (60 * 60 * 1000);
+
             signInForm.reset()
             localStorage.setItem('token', userData.token);
             localStorage.setItem('userId', userData.userId);
-            
+            localStorage.setItem('refreshToken', userData.refreshToken);
+            localStorage.setItem('expirationTime', expirationTime.toString());
+
+            const token = localStorage.getItem('token');
+
+            const adminCheck = await fetch(`${apiUrl}api/auth/user/${userData.userId}`,
+                {
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    }
+                });
+
+
             loginHide.style.display = 'none';
 
-            headerProfileBtn.innerHTML = `<a href="">
-					Logout
-					<img src="assets/icons/🦆 icon _account login_.svg" alt="">
-				</a>`;
-
-            headerProfileBtn.classList.add('header__logout_btn')
-            headerProfileBtn.classList.remove('header__login_btn')
+            userCheck();
 
             messageConfirmation.firstElementChild!.innerHTML = `
                 <i class="fa-solid fa-check"></i>
                 <span>LogIn was successful !</span>`;
             messageConfirmation.style.display = "block";
+
+            if (adminCheck.ok) {
+                const adminCheckData = await adminCheck.json()
+                if (adminCheckData.user.isAdmin)
+                    window.location.href = "dashboard/dashboard.html"
+            }
         } else {
             messageConfirmation.firstElementChild!.innerHTML = `
                 <i class="fa-solid fa-xmark"></i>
