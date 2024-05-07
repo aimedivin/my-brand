@@ -19,12 +19,13 @@ signupLink.addEventListener('click', e => {
 });
 
 loginCloseBtn.addEventListener('click', () => {
-	loginHideShow.style.display = 'none'
+	loginHideShow.style.display = 'none';
+	document.querySelector("body").style.overflowY = 'auto';
 });
 signupCloseBtn.addEventListener('click', () => {
-	signupHideShow.style.display = 'none'
+	signupHideShow.style.display = 'none';
+	document.querySelector("body").style.overflowY = 'auto';
 });
-
 
 // const login_btn = document.querySelector(".login__btn--signin");
 // if (login_btn) {

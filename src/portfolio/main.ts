@@ -311,6 +311,7 @@ const userCheck = async () => {
         headerProfileBtn.addEventListener('click', e => {
             e.preventDefault();
             loginForm.style.display = 'block';
+            document.querySelector("body")!.style.overflowY = 'hidden';
         })
     }
 }
