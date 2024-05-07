@@ -36,7 +36,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 85%;
+    width: 55rem;
     height: 33rem;
     margin-inline: auto;
     background-color: var(--stn-bg-color);
@@ -202,11 +202,22 @@
 
 .login__btn--google {
     background-color: #990000;
+    cursor: not-allowed;
+}
+
+.login__btn--google:hover {
+    background-color: #d75353;
 }
 
 .login__btn--apple {
     background-color: black;
+    cursor: not-allowed;
 }
+
+.login__btn--apple:hover{
+    background-color: rgb(40, 40, 40);
+}
+
 
 /* Mobile style */
 

@@ -20,14 +20,14 @@
 .dark-mode {
     --bg-color: #141414;
     --hdr-bg-color: #1a1a1a;
-    --stn-bg-color: #353535;
+    --stn-bg-color: #2e2e2e;
     --font-black: #efefef;
     --font-white: #111111;
     --box-aa-color: #141616;
     --blog-bg-color: #202020;
     --portfolio-bg-color: #000000;
     --blog-title-color: #4ab3d3;
-    --form-gray-800: #b8b8b8;
+    --form-gray-800: #d6d6d6;
 }
 
 * {
@@ -571,6 +571,7 @@ main {
     margin-block: .5rem;
     margin-inline: auto;
     font-weight: 400;
+    color: var(--form-gray-800);
 }
 
 .blogs__action {
@@ -645,16 +646,21 @@ main {
 }
 
 .contact__content p {
+    color: var(--form-gray-800);
     line-height: 1.1rem;
     font-weight: 500;
     font-size: .95rem;
 }
 
 .contact__content a {
-    color: rgb(44, 44, 44);
+    color: var(--box-bb-color);
     text-decoration: none;
     font-style: italic;
     font-size: 0.9rem;
+}
+
+.contact__content a:hover {
+    font-weight: 700;
 }
 
 .contact__email img {
@@ -767,16 +773,10 @@ main {
     font-family: inherit;
 }
 
-input:-internal-autofill-selected {
-    appearance: menulist-button;
-    background-image: none !important;
-    background-color: -internal-light-dark(rgb(0, 72, 196), rgba(5, 63, 172, 0.4)) !important;
-    color: fieldtext !important;
-}
-
 .footer__form input {
     height: 1.9rem;
     width: 17rem;
+    color: var(--font-black);
 }
 
 .footer__form ::placeholder {
@@ -787,6 +787,7 @@ input:-internal-autofill-selected {
     height: 8rem;
     width: 17rem;
     padding-top: 0.5rem;
+    color: var(--font-black);
 }
 
 .footer__btn {
@@ -1914,6 +1915,10 @@ input:-internal-autofill-selected {
     .footer__form textarea {
         height: 6rem;
         padding-top: 0.2rem;
+    }
+
+    #error {
+        top: -.3rem;
     }
 
     .footer__btn {
